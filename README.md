@@ -1,59 +1,105 @@
-# CrystalWeb
+# WebCrystal Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.4.
+Sitio web de **Alquiladora Crystal** construido con Angular (standalone components), orientado a una arquitectura modular y escalable.
 
-## Development server
+## Stack
 
-To start a local development server, run:
+- Angular 21
+- TypeScript
+- Angular SSR
+- CSS (component-scoped styles)
 
-```bash
-ng serve
+## Arquitectura
+
+```text
+src/app
+  core/
+  layout/
+    navbar/
+    footer/
+  shared/
+    components/
+    interfaces/
+    models/
+  pages/
+    home/
+      components/
+    services/
+      components/
+    about/
+      components/
+    contact/
+      components/
+    catalog/
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Caracteristicas implementadas
 
-## Code scaffolding
+- Arquitectura profesional por capas: `core`, `layout`, `shared`, `pages`.
+- Componentes standalone para Angular moderno.
+- Home desacoplado por secciones (`hero`, `our-services`, `faq`, `testimonials`).
+- Estilos encapsulados por componente (sin mezclar estilos globales innecesarios).
+- SEO tecnico base:
+  - `title` y `meta description` por ruta.
+  - Open Graph y Twitter cards.
+  - Canonical dinamico.
+  - `robots.txt` y `sitemap.xml`.
+- Optimizaciones de rendimiento para mobile:
+  - Prioridad de carga para imagen hero.
+  - Dimensiones explicitas en imagenes para reducir CLS.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## Scripts
 
 ```bash
-ng build
+npm install
+npm start
+npm run build
+npm run test
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Desarrollo local
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+1. Instala dependencias:
 
 ```bash
-ng test
+npm install
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+2. Ejecuta en desarrollo:
 
 ```bash
-ng e2e
+npm start
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+3. Abre en navegador:
 
-## Additional Resources
+```text
+http://localhost:4200
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## SEO y archivos publicos
+
+Archivos SEO relevantes:
+
+- `src/index.html`
+- `src/app/core/services/seo.service.ts`
+- `src/app/app.routes.ts`
+- `public/robots.txt`
+- `public/sitemap.xml`
+
+## Deploy
+
+Dominio objetivo:
+
+- `https://alquiladoracrystal.com`
+
+Al desplegar, valida:
+
+- Respuesta `200` en rutas principales.
+- `robots.txt` y `sitemap.xml` accesibles.
+- Envio de sitemap en Google Search Console.
+
+## Notas
+
+- Proyecto preparado para crecer con nuevas features (por ejemplo, modulo de reservas).
+- Mantener la convencion por feature para nuevas paginas y componentes.

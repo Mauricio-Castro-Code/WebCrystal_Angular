@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+.about-block {
+  border-radius: 16px;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: #ffffff;
+  padding: 1.15rem;
+}
+
+.about-block h2 {
+  margin: 0;
+  color: #173a72;
+}
+
+.about-block p {
+  margin: 0.7rem 0 0;
+  color: #475569;
+  line-height: 1.55;
+}

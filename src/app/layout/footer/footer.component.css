@@ -1,0 +1,153 @@
+:host {
+  display: block;
+}
+
+.footer {
+  width: min(1120px, 92%);
+  margin: 2.2rem auto max(1rem, env(safe-area-inset-bottom));
+  padding: 1.3rem 1rem 1.15rem;
+  border-top: 1px solid rgba(17, 24, 39, 0.12);
+  color: #334155;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  width: 100%;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.25rem 2rem;
+}
+
+.logo-link {
+  display: inline-flex;
+  text-decoration: none;
+}
+
+.logo-img {
+  width: clamp(170px, 24vw, 230px);
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.brand-column p {
+  margin: 0.75rem 0 0;
+  color: #64748b;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.seo-text {
+  display: block;
+  margin-top: 0.55rem;
+  color: #1f2937;
+  font-size: 0.93rem;
+  line-height: 1.45;
+  font-weight: 700;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.9rem;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.72);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-1px);
+  border-color: #277740;
+}
+
+.social-icons img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.products-column h5,
+.location-column h5 {
+  margin: 0 0 0.7rem;
+  color: #0f172a;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.product-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.product-list li + li {
+  margin-top: 0.5rem;
+}
+
+.product-list span {
+  color: #475569;
+  font-size: 0.93rem;
+  line-height: 1.35;
+}
+
+.direccion {
+  margin: 0;
+  color: #475569;
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+
+.direccion-link {
+  display: inline-flex;
+  margin-top: 0.65rem;
+  color: #277740;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.direccion-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    margin-top: 1.7rem;
+    padding-top: 1rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .footer-desktop-only {
+    display: none;
+  }
+
+  .brand-column {
+    text-align: center;
+  }
+
+  .logo-link {
+    justify-content: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}

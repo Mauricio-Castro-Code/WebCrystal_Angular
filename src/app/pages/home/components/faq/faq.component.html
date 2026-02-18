@@ -1,0 +1,41 @@
+<section class="faq" aria-labelledby="faq-title">
+  <div class="faq-shell">
+    <header class="faq-header">
+      <h2 id="faq-title">Preguntas Frecuentes</h2>
+      <p>
+        Resolvemos las dudas mas comunes para que cotices rapido y planees tu evento
+        con claridad.
+      </p>
+    </header>
+
+    <div class="faq-list">
+      @for (item of faqItems; track item.question; let i = $index) {
+        <details class="faq-item">
+          <summary>
+            <span class="faq-index">{{ i + 1 < 10 ? '0' + (i + 1) : i + 1 }}</span>
+            <span class="faq-question">{{ item.question }}</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+
+          <div class="faq-answer">
+            @if (item.intro) {
+              <p>{{ item.intro }}</p>
+            }
+
+            @if (item.bullets?.length) {
+              <ul>
+                @for (bullet of item.bullets; track bullet) {
+                  <li>{{ bullet }}</li>
+                }
+              </ul>
+            }
+
+            @if (item.outro) {
+              <p>{{ item.outro }}</p>
+            }
+          </div>
+        </details>
+      }
+    </div>
+  </div>
+</section>

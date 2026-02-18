@@ -1,0 +1,29 @@
+:host {
+  display: block;
+}
+
+.map-card {
+  border-radius: 16px;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: #fff;
+  padding: 1rem;
+  height: 100%;
+}
+
+.map-card h2 {
+  margin: 0;
+  color: #173a72;
+  font-size: 1.2rem;
+}
+
+.map-card p {
+  margin: 0.6rem 0 0.9rem;
+  color: #475569;
+}
+
+.map-card iframe {
+  width: 100%;
+  min-height: 340px;
+  border: 0;
+  border-radius: 12px;
+}

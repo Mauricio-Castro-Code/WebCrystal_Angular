@@ -1,0 +1,13 @@
+<button
+  [attr.type]="type"
+  class="button"
+  [class.button-primary]="variant === 'primary'"
+  [class.button-secondary]="variant === 'secondary'"
+  [class.button-ghost]="variant === 'ghost'"
+  [class.button-full]="fullWidth"
+  [disabled]="disabled"
+  (click)="onClick()"
+>
+  <ng-content></ng-content>
+  <span class="button-label">{{ label }}</span>
+</button>

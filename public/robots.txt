@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Host: alquiladoracrystal.com
+Sitemap: https://alquiladoracrystal.com/sitemap.xml

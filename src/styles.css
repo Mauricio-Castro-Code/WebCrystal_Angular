@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: 'Lato', 'Trebuchet MS', 'Segoe UI', sans-serif;
+  color: #112256;
+}

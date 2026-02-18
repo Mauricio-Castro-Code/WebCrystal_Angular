@@ -1,12 +1,35 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
+
+import { FooterComponent } from './layout/footer/footer.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+import { SeoService } from './core/services/seo.service';
+import { ButtonCotizarComponent } from './shared/components/button-cotizar/button-cotizar.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [RouterOutlet, NavbarComponent, FooterComponent, ButtonCotizarComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
-  protected readonly title = signal('crystal-web');
+  private readonly router = inject(Router);
+  private readonly seoService = inject(SeoService);
+
+  constructor() {
+    this.seoService.init();
+  }
+
+  protected get isInicioRoute(): boolean {
+    return (
+      this.router.url === '/' ||
+      this.router.url === '/inicio' ||
+      this.router.url === '/home' ||
+      this.router.url.startsWith('/inicio?') ||
+      this.router.url.startsWith('/inicio#') ||
+      this.router.url.startsWith('/home?') ||
+      this.router.url.startsWith('/home#')
+    );
+  }
 }

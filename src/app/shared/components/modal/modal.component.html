@@ -1,0 +1,13 @@
+@if (open) {
+  <div class="backdrop" (click)="close()">
+    <section class="modal" role="dialog" [attr.aria-label]="title" (click)="$event.stopPropagation()">
+      <header class="modal-header">
+        <h2>{{ title }}</h2>
+        <button type="button" class="close" aria-label="Cerrar" (click)="close()">X</button>
+      </header>
+      <div class="modal-content">
+        <ng-content></ng-content>
+      </div>
+    </section>
+  </div>
+}

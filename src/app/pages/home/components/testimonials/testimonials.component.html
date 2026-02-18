@@ -1,0 +1,27 @@
+<section class="testimonials" aria-labelledby="testimonials-title">
+  <div class="testimonials-shell">
+    <header>
+      <h2 id="testimonials-title">Lo que dicen nuestros clientes</h2>
+      <p>Experiencias reales de clientes que confiaron en nuestro equipo para sus eventos.</p>
+    </header>
+
+    <div class="testimonials-grid">
+      @for (item of testimonials; track item.author; let i = $index) {
+        <article class="testimonial-card">
+          <span class="quote-mark" aria-hidden="true">"</span>
+          <p class="quote">{{ item.quote }}</p>
+
+          <footer class="testimonial-meta">
+            <div>
+              <p class="author">{{ item.author }}</p>
+              <p class="role">{{ item.role }}</p>
+            </div>
+            <span class="context">{{ item.context }}</span>
+          </footer>
+
+          <span class="card-index" aria-hidden="true">{{ i + 1 < 10 ? '0' + (i + 1) : i + 1 }}</span>
+        </article>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+<section class="team" aria-labelledby="team-title">
+  <header>
+    <h2 id="team-title">Equipo</h2>
+    <p>Un equipo especializado para acompanarte de la cotizacion al desmontaje.</p>
+  </header>
+
+  <div class="team-grid">
+    @for (member of members; track member.name) {
+      <article class="team-card">
+        <img [src]="member.photo" [alt]="member.name" loading="lazy" />
+        <h3>{{ member.name }}</h3>
+        <p>{{ member.role }}</p>
+      </article>
+    }
+  </div>
+</section>

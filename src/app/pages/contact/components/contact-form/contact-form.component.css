@@ -1,0 +1,39 @@
+:host {
+  display: block;
+}
+
+.contact-form {
+  border-radius: 16px;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: #fff;
+  padding: 1rem;
+}
+
+.field-row {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.field-row + .field-row {
+  margin-top: 0.85rem;
+}
+
+.field-row label {
+  color: #173a72;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.field-row input,
+.field-row textarea {
+  width: 100%;
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+  font: inherit;
+}
+
+app-button {
+  margin-top: 1rem;
+  width: 100%;
+}

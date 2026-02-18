@@ -1,0 +1,19 @@
+<article class="card">
+  @if (image) {
+    <div class="card-media">
+      <img [src]="image" [alt]="imageAlt || title" loading="lazy" />
+    </div>
+  }
+
+  <div class="card-body">
+    @if (title) {
+      <h3 class="card-title">{{ title }}</h3>
+    }
+
+    @if (subtitle) {
+      <p class="card-subtitle">{{ subtitle }}</p>
+    }
+
+    <ng-content></ng-content>
+  </div>
+</article>

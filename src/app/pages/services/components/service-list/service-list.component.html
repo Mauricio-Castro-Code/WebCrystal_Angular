@@ -1,0 +1,5 @@
+<div class="service-list-grid">
+  @for (service of services; track service.title) {
+    <app-service-card [service]="service"></app-service-card>
+  }
+</div>
