@@ -5,9 +5,6 @@
 .testimonials {
   width: 100%;
   padding: 0 0 clamp(2.2rem, 4vw, 3rem);
-  background:
-    radial-gradient(circle at 0% 100%, rgba(23, 58, 114, 0.08) 0%, rgba(23, 58, 114, 0) 42%),
-    radial-gradient(circle at 100% 0%, rgba(39, 119, 64, 0.08) 0%, rgba(39, 119, 64, 0) 40%);
 }
 
 .testimonials-shell {

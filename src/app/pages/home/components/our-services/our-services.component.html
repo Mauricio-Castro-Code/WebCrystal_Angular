@@ -1,65 +1,50 @@
-<section class="services-premium" aria-labelledby="services-premium-title">
-  <div class="services-wrap">
-    <header class="services-header">
-      <h2 id="services-premium-title" class="services-title">Nuestros Servicios Premium</h2>
-      <span class="services-accent" aria-hidden="true"></span>
-      <p class="services-description">
-        Desde bodas intimas hasta grandes eventos corporativos, tenemos el mobiliario
-        perfecto para cada ocasion.
-      </p>
+<section class="our-services" aria-labelledby="our-services-title">
+  <div class="our-services__container">
+    <header class="our-services__header">
+      <h2 id="our-services-title" class="our-services__title">Nuestros Servicios</h2>
+      <span class="our-services__accent" aria-hidden="true"></span>
     </header>
 
-    <div class="services-grid">
-      <article class="service-card">
-        <img
-          src="/Crossback.webp"
-          alt="Sillas y mesas elegantes para eventos"
-          loading="lazy"
-          decoding="async"
-          width="1200"
-          height="900"
-        />
-        <div class="service-overlay">
-          <h3 class="service-name">Sillas y Mesas</h3>
-          <a class="service-link" routerLink="/catalogo" aria-label="Ver coleccion de sillas y mesas">
-            Ver Coleccion
-          </a>
-        </div>
-      </article>
+    <div class="our-services__grid">
+      @for (service of services; track service.title) {
+        <article class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            @switch (service.icon) {
+              @case ('catering') {
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path
+                    d="M5.2 3.2c.44 0 .8.36.8.8v3a2 2 0 0 1-1.8 1.98V20a.8.8 0 0 1-1.6 0V8.98A2 2 0 0 1 .8 7V4c0-.44.36-.8.8-.8s.8.36.8.8v3c0 .22.18.4.4.4s.4-.18.4-.4V4c0-.44.36-.8.8-.8s.8.36.8.8v3c0 .22.18.4.4.4s.4-.18.4-.4V4c0-.44.36-.8.8-.8Zm10.42 0c.24 0 .47.1.62.3.14.2.18.45.1.68L15 8.8V20a.8.8 0 1 1-1.6 0v-4.5h-2.2a.8.8 0 0 1-.78-.99l2.7-10.7a.8.8 0 0 1 .78-.6h1.72Z"
+                  />
+                </svg>
+              }
+              @case ('mobiliario') {
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path
+                    d="M7 2.8a2.2 2.2 0 0 0-2.2 2.2v1.6A2.2 2.2 0 0 0 7 8.8h10A2.2 2.2 0 0 0 19.2 6.6V5A2.2 2.2 0 0 0 17 2.8H7Zm0 1.6h10c.33 0 .6.27.6.6v1.6a.6.6 0 0 1-.6.6H7a.6.6 0 0 1-.6-.6V5c0-.33.27-.6.6-.6Zm1.4 5.7a2.2 2.2 0 0 0-2.2 2.2v4.9a.8.8 0 1 0 1.6 0v-1.7h8.4v1.7a.8.8 0 1 0 1.6 0v-4.9a2.2 2.2 0 0 0-2.2-2.2H8.4Zm0 1.6h7.2c.33 0 .6.27.6.6V14H7.8v-1.7c0-.33.27-.6.6-.6Z"
+                  />
+                </svg>
+              }
+              @case ('carpas') {
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path
+                    d="M12 3.2a.8.8 0 0 1 .57.24l8 8a.8.8 0 0 1-.57 1.36h-.8V20a.8.8 0 0 1-1.6 0v-7.2h-2.2V20a.8.8 0 0 1-1.6 0v-7.2h-3.6V20a.8.8 0 0 1-1.6 0v-7.2H6.4V20a.8.8 0 1 1-1.6 0v-7.2H4a.8.8 0 0 1-.57-1.36l8-8a.8.8 0 0 1 .57-.24Zm0 1.94-6.07 6.06h12.14L12 5.14Z"
+                  />
+                </svg>
+              }
+            }
+          </div>
 
-      <article class="service-card">
-        <img
-          src="/Chachapa.webp"
-          alt="Carpas de lujo para eventos al aire libre"
-          loading="lazy"
-          decoding="async"
-          width="1200"
-          height="900"
-        />
-        <div class="service-overlay">
-          <h3 class="service-name">Carpas de Lujo</h3>
-          <a class="service-link" routerLink="/servicios" aria-label="Ver opciones de carpas de lujo">
-            Ver Opciones
+          <h3 class="service-card__title">{{ service.title }}</h3>
+          <p class="service-card__description">{{ service.description }}</p>
+          <a
+            class="service-card__link"
+            [routerLink]="service.link"
+            [attr.aria-label]="service.ariaLabel"
+          >
+            {{ service.linkText }} <span class="service-card__arrow" aria-hidden="true">&rarr;</span>
           </a>
-        </div>
-      </article>
-
-      <article class="service-card">
-        <img
-          src="/LuisXV.webp"
-          alt="Mobiliario tipo lounge para eventos premium"
-          loading="lazy"
-          decoding="async"
-          width="1200"
-          height="900"
-        />
-        <div class="service-overlay">
-          <h3 class="service-name">Salas Lounge</h3>
-          <a class="service-link" routerLink="/catalogo" aria-label="Ver modelos de salas lounge">
-            Ver Modelos
-          </a>
-        </div>
-      </article>
+        </article>
+      }
     </div>
   </div>
 </section>
