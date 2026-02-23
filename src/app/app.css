@@ -7,10 +7,7 @@
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  background:
-    radial-gradient(circle at 12% 12%, rgba(255, 255, 255, 0.95), transparent 40%),
-    radial-gradient(circle at 88% 0%, rgba(215, 208, 200, 0.6), transparent 32%),
-    var(--bg);
+background-color: #f9fafb;
   color: var(--text);
 }
 

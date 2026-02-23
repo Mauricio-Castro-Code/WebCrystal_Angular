@@ -6,5 +6,14 @@
   [attr.aria-label]="label"
 >
   <span>{{ label }}</span>
-  <img [src]="imageSrc" [alt]="label" class="whatsapp-icon" decoding="async" />
+  <img
+    [src]="imageSrc"
+    [alt]="label"
+    class="whatsapp-icon"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    width="512"
+    height="512"
+  />
 </a>

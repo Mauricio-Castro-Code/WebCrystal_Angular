@@ -9,6 +9,8 @@
   border-top: 1px solid rgba(17, 24, 39, 0.12);
   color: #334155;
   font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  content-visibility: auto;
+  contain-intrinsic-size: 340px;
 }
 
 .footer-container {
@@ -60,8 +62,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 999px;
   border: 1px solid rgba(15, 23, 42, 0.12);
   background: rgba(255, 255, 255, 0.72);
@@ -74,8 +76,8 @@
 }
 
 .social-icons img {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   object-fit: contain;
 }
 
@@ -126,8 +128,9 @@
 
 @media (max-width: 768px) {
   .footer {
+    width: 94%;
     margin-top: 1.7rem;
-    padding-top: 1rem;
+    padding: 0.95rem 0.75rem 0.9rem;
   }
 
   .footer-grid {
@@ -149,5 +152,6 @@
 
   .social-icons {
     justify-content: center;
+    gap: 0.7rem;
   }
 }

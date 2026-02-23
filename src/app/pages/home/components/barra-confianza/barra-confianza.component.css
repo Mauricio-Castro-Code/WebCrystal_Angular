@@ -10,6 +10,8 @@
   margin-right: -50vw;
   background: #112959;
   padding: 60px 0;
+  content-visibility: auto;
+  contain-intrinsic-size: 320px;
 }
 
 .trust-bar__container {

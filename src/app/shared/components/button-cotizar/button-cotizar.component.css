@@ -59,8 +59,8 @@
 
 @media (max-width: 860px) {
   .floating-button {
-    right: max(10px, calc(env(safe-area-inset-right) + 6px));
-    bottom: max(10px, calc(env(safe-area-inset-bottom) + 6px));
+    right: max(10px, calc(env(safe-area-inset-right) + 8px));
+    bottom: max(12px, calc(env(safe-area-inset-bottom) + 10px));
     width: 56px;
     height: 56px;
   }
@@ -72,5 +72,17 @@
 
   .floating-button span {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-button {
+    width: 54px;
+    height: 54px;
+  }
+
+  .whatsapp-icon {
+    width: 54px;
+    height: 54px;
   }
 }

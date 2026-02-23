@@ -57,7 +57,21 @@
 }
 
 @media (max-width: 760px) {
+  .team {
+    padding: 1rem 0.9rem;
+  }
+
   .team-grid {
     grid-template-columns: minmax(0, 1fr);
+    gap: 0.7rem;
+  }
+
+  .team-card h3 {
+    font-size: 0.98rem;
+  }
+
+  .team-card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
   }
 }

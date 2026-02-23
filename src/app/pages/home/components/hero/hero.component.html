@@ -1,47 +1,38 @@
-<section class="hero">
+<section class="hero" aria-label="Presentacion principal">
   <img
     class="hero-bg"
-    src="/Chachapa.webp"
+    src="/Chachapa-768.webp"
+    srcset="/Chachapa-480.webp 480w, /Chachapa-768.webp 768w, /Chachapa-1080.webp 1080w, /Chachapa-1280.webp 1280w"
+    sizes="100vw"
     alt=""
     aria-hidden="true"
     loading="eager"
     fetchpriority="high"
-    decoding="async"
-    width="1920"
-    height="1280"
+    decoding="sync"
+    width="1280"
+    height="851"
   />
+  <div class="hero-overlay" aria-hidden="true"></div>
 
-  <div class="hero-shell">
-    <div class="hero-content">
-      <div class="hero-copy">
-        <h1 class="hero-title">
-          Haz de tu evento<br />
-          algo <span class="hero-highlight">inolvidable</span>
-        </h1>
+  <div class="hero-content">
+    <h1 class="hero-title">Haz de tu evento algo inolvidable</h1>
 
-        <p class="hero-description">
-          Ofrecemos servicios premium de alquiler para eventos en Puebla.
-          Desde mobiliario elegante hasta carpas de lujo, cuidamos cada detalle
-          para que tu solo disfrutes.
-        </p>
-      </div>
+    <p class="hero-description">
+      Ofrecemos servicios de alquiler para eventos en Puebla. Desde mobiliario elegante
+      hasta carpas de lujo, cuidamos cada detalle para que tu solo disfrutes.
+    </p>
 
-      <div class="hero-actions" aria-label="Acciones principales">
-        <a
-          class="hero-btn hero-btn-primary"
-          routerLink="/contacto"
-          aria-label="Solicitar cotizacion de mobiliario"
-        >
-          Solicitar Cotizacion <span aria-hidden="true">-></span>
-        </a>
-        <a
-          class="hero-btn hero-btn-secondary"
-          routerLink="/servicios"
-          aria-label="Ver servicios disponibles"
-        >
-          Ver Servicios
-        </a>
-      </div>
+    <div class="hero-actions" aria-label="Acciones principales">
+      <a
+        class="hero-btn hero-btn-primary"
+        routerLink="/contacto"
+        aria-label="Solicitar cotizacion de mobiliario"
+      >
+        Cotizar Mobiliario
+      </a>
+      <a class="hero-btn hero-btn-secondary" routerLink="/servicios" aria-label="Ver servicios disponibles">
+        Ver Servicios
+      </a>
     </div>
   </div>
 </section>

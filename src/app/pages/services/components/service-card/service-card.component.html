@@ -1,11 +1,20 @@
 <article class="service-card">
   <div class="service-image">
-    <img [src]="service.image" [alt]="service.title" loading="lazy" />
+    <img
+      [src]="service.image"
+      [alt]="service.title"
+      loading="lazy"
+      decoding="async"
+      width="1200"
+      height="750"
+    />
   </div>
 
   <div class="service-content">
     <h3>{{ service.title }}</h3>
     <p>{{ service.description }}</p>
-    <a [routerLink]="service.ctaLink">{{ service.ctaLabel }}</a>
+    <a [routerLink]="service.ctaLink" [attr.aria-label]="service.ctaLabel + ' - ' + service.title">
+      {{ service.ctaLabel }}
+    </a>
   </div>
 </article>

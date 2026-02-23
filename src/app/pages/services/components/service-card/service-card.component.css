@@ -8,6 +8,13 @@
   border: 1px solid rgba(15, 23, 42, 0.08);
   background: #fff;
   box-shadow: 0 20px 34px -26px rgba(15, 23, 42, 0.48);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(39, 119, 64, 0.26);
+  box-shadow: 0 24px 38px -30px rgba(39, 119, 64, 0.44);
 }
 
 .service-image {
@@ -40,7 +47,40 @@
 .service-content a {
   margin-top: 0.9rem;
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.4rem 0.82rem;
+  border-radius: 999px;
+  border: 1px solid rgba(39, 119, 64, 0.25);
+  background: rgba(39, 119, 64, 0.08);
   color: #277740;
   font-weight: 700;
   text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.service-content a:hover {
+  color: #ffffff;
+  background: #277740;
+  border-color: #277740;
+}
+
+@media (max-width: 640px) {
+  .service-card {
+    border-radius: 16px;
+  }
+
+  .service-content {
+    padding: 0.9rem 0.88rem 0.95rem;
+  }
+
+  .service-content h3 {
+    font-size: 1.08rem;
+  }
+
+  .service-content p {
+    font-size: 0.94rem;
+    line-height: 1.45;
+  }
 }

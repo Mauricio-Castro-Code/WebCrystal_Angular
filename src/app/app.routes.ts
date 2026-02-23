@@ -1,16 +1,11 @@
 import { Routes } from '@angular/router';
 
-import { AboutComponent } from './pages/about/about.component';
-import { CatalogComponent } from './pages/catalog/catalog.component';
-import { ContactComponent } from './pages/contact/contact.component';
-import { HomeComponent } from './pages/home/home.component';
-import { ServicesComponent } from './pages/services/services.component';
-
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'inicio' },
   {
     path: 'inicio',
-    component: HomeComponent,
+    loadComponent: () =>
+      import('./pages/home/home.component').then((m) => m.HomeComponent),
     title: 'Alquiladora Crystal | Renta de Mobiliario en Puebla',
     data: {
       description:
@@ -20,7 +15,8 @@ export const routes: Routes = [
   { path: 'home', redirectTo: 'inicio', pathMatch: 'full' },
   {
     path: 'catalogo',
-    component: CatalogComponent,
+    loadComponent: () =>
+      import('./pages/catalog/catalog.component').then((m) => m.CatalogComponent),
     title: 'Catalogo | Alquiladora Crystal',
     data: {
       description:
@@ -29,7 +25,8 @@ export const routes: Routes = [
   },
   {
     path: 'servicios',
-    component: ServicesComponent,
+    loadComponent: () =>
+      import('./pages/services/services.component').then((m) => m.ServicesComponent),
     title: 'Servicios | Alquiladora Crystal',
     data: {
       description:
@@ -38,7 +35,8 @@ export const routes: Routes = [
   },
   {
     path: 'contacto',
-    component: ContactComponent,
+    loadComponent: () =>
+      import('./pages/contact/contact.component').then((m) => m.ContactComponent),
     title: 'Contacto | Alquiladora Crystal',
     data: {
       description:
@@ -47,7 +45,8 @@ export const routes: Routes = [
   },
   {
     path: 'nosotros',
-    component: AboutComponent,
+    loadComponent: () =>
+      import('./pages/about/about.component').then((m) => m.AboutComponent),
     title: 'Nosotros | Alquiladora Crystal',
     data: {
       description:

@@ -21,3 +21,20 @@
   max-width: 60ch;
   line-height: 1.55;
 }
+
+@media (max-width: 640px) {
+  .catalog-page {
+    width: 94%;
+    padding: 0.7rem 0 1.5rem;
+    text-align: left;
+  }
+
+  .catalog-page h1 {
+    font-size: clamp(1.8rem, 8.8vw, 2.2rem);
+  }
+
+  .catalog-page p {
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+}

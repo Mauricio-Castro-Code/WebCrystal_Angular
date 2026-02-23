@@ -3,7 +3,7 @@
 }
 
 .button {
-  min-height: 42px;
+  min-height: 48px;
   min-width: 120px;
   border-radius: 999px;
   border: 1px solid transparent;
@@ -52,4 +52,12 @@
 .button:disabled {
   opacity: 0.65;
   cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .button {
+    min-height: 50px;
+    font-size: 0.94rem;
+    padding: 0.6rem 0.95rem;
+  }
 }

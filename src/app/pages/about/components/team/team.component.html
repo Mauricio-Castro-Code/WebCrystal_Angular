@@ -7,7 +7,14 @@
   <div class="team-grid">
     @for (member of members; track member.name) {
       <article class="team-card">
-        <img [src]="member.photo" [alt]="member.name" loading="lazy" />
+        <img
+          [src]="member.photo"
+          [alt]="member.name"
+          loading="lazy"
+          decoding="async"
+          width="1200"
+          height="750"
+        />
         <h3>{{ member.name }}</h3>
         <p>{{ member.role }}</p>
       </article>
