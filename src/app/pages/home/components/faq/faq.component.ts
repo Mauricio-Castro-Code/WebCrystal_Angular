@@ -22,7 +22,7 @@ export class FaqComponent {
       question: 'Cual es el metodo de entrega?',
       intro: 'Ofrecemos dos opciones convenientes para la entrega de tus pedidos:',
       bullets: [
-        'Recogida en tienda: Puedes recoger tu pedido directamente en nuestro local sin costo adicional.',
+        'Recolección en el local: Puedes recoger tu pedido directamente en nuestro local sin costo adicional.',
         'Entrega a domicilio: El costo del flete se calcula en nuestro sistema segun la distancia del envio redondo.',
       ],
       outro:
@@ -59,11 +59,11 @@ export class FaqComponent {
         'Si tienes dudas sobre los metodos de pago o necesitas mas informacion, contactanos y te apoyamos.',
     },
     {
-      question: 'Que pasa si entrego el material danado?',
+      question: 'Que pasa si entrego el material dañado?',
       intro:
-        'Nuestro equipo revisa el material durante la recoleccion. Si se detectan danos, se calculara un costo de reparacion.',
+        'Nuestro equipo revisa el material durante la recoleccion. Si se detectan daños, se calculara un costo de reparacion.',
       outro:
-        'Si el dano es irreparable, se procedera a la reposicion del costo total del material. Te recomendamos revisar el equipo antes de la entrega para evitar inconvenientes.',
+        'Si el daño es irreparable, se procedera a la reposicion del costo total del material. Te recomendamos revisar el equipo antes de la entrega para evitar inconvenientes.',
     },
   ];
 }

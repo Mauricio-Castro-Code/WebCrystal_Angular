@@ -17,18 +17,18 @@ interface TrustItem {
 export class BarraConfianzaComponent {
   protected readonly trustItems: readonly TrustItem[] = [
     {
-      value: '+500 Eventos',
+      value: '+30 años',
       label: 'Experiencia Comprobada',
       icon: 'experiencia',
     },
     {
-      value: 'Atencion 24/7',
-      label: 'Soporte Continuo',
+      value: '100% Satisfacción',
+      label: 'Entrega Garantizada',
       icon: 'soporte',
     },
     {
-      value: 'Calidad Premium',
-      label: 'Materiales de Lujo',
+      value: 'Mobiliario Destacado ',
+      label: 'Limpio y en excelente estado',
       icon: 'calidad',
     },
   ];
