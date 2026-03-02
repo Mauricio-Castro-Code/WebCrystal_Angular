@@ -2,52 +2,83 @@
   display: block;
 }
 
-.about-page {
-  width: min(1120px, 92%);
+.about-hero {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 108px 0 96px;
+  background:
+    radial-gradient(70% 120% at 100% 0%, rgba(39, 119, 64, 0.2) 0%, rgba(39, 119, 64, 0) 62%),
+    #112959;
+  content-visibility: auto;
+  contain-intrinsic-size: 420px;
+}
+
+.about-hero__shell {
+  box-sizing: border-box;
+  width: min(1200px, 100%);
   margin: 0 auto;
-  padding: 1rem 0 2rem;
-}
-
-.about-page-header {
+  padding-inline: 16px;
   text-align: center;
-  margin-bottom: 1.6rem;
 }
 
-.about-page-header h1 {
+.about-hero h1 {
   margin: 0;
-  color: #173a72;
-  font-size: clamp(2rem, 4.4vw, 2.8rem);
+  color: #ffffff;
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  font-size: clamp(2.2rem, 5.5vw, 5.1rem);
+  line-height: 1.03;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
 }
 
-.about-page-header p {
-  width: min(66ch, 100%);
-  margin: 0.85rem auto 0;
-  color: #475569;
+.about-hero__accent {
+  display: inline-block;
+  width: 76px;
+  height: 6px;
+  margin-top: 18px;
+  border-radius: 999px;
+  background: #277740;
+}
+
+.about-hero p {
+  width: min(760px, 100%);
+  margin: 20px auto 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Inter', 'Inter Tight', 'Segoe UI', sans-serif;
+  font-size: clamp(1rem, 1.6vw, 1.28rem);
   line-height: 1.6;
+  text-wrap: pretty;
 }
 
-@media (max-width: 860px) {
-  .about-page {
-    width: 94%;
-    padding: 0.85rem 0 1.8rem;
-  }
-
-  .about-page-header {
-    margin-bottom: 1.2rem;
+@media (max-width: 900px) {
+  .about-hero {
+    padding: 90px 0 76px;
   }
 }
 
-@media (max-width: 640px) {
-  .about-page {
-    padding: 0.7rem 0 1.5rem;
+@media (max-width: 700px) {
+  .about-hero {
+    padding: 74px 0 60px;
   }
 
-  .about-page-header h1 {
-    font-size: clamp(1.8rem, 8.8vw, 2.2rem);
+  .about-hero__shell {
+    padding-inline: 14px;
   }
 
-  .about-page-header p {
-    font-size: 0.95rem;
-    line-height: 1.48;
+  .about-hero h1 {
+    font-size: clamp(2rem, 10vw, 3.1rem);
+  }
+
+  .about-hero__accent {
+    margin-top: 14px;
+  }
+
+  .about-hero p {
+    margin-top: 16px;
+    font-size: 0.98rem;
   }
 }

@@ -87,6 +87,32 @@ Archivos SEO relevantes:
 - `public/robots.txt`
 - `public/sitemap.xml`
 
+## Formulario de contacto funcional
+
+El formulario de `/contacto` envia datos al endpoint backend `POST /api/contact` (SSR/Express) y este endpoint reenvia la solicitud por email usando Resend.
+
+Variables de entorno requeridas:
+
+- `RESEND_API_KEY`: API key de Resend.
+- `CONTACT_TO_EMAIL`: correo destino que recibira las solicitudes (ej. `hola@alquiladoracrystal.com`).
+- `CONTACT_FROM_EMAIL`: remitente validado en Resend (ej. `Alquiladora Crystal <noreply@tudominio.com>`).
+
+Pasos recomendados:
+
+1. Crear cuenta en [Resend](https://resend.com) y generar API key.
+2. Verificar dominio/remitente en Resend para produccion.
+3. Configurar variables en el entorno de deploy (Vercel/servidor).
+4. Probar envio desde la pagina `/contacto`.
+
+Ejemplo local (zsh/bash):
+
+```bash
+export RESEND_API_KEY="re_xxx"
+export CONTACT_TO_EMAIL="tu_correo@dominio.com"
+export CONTACT_FROM_EMAIL="Alquiladora Crystal <noreply@tudominio.com>"
+npm start
+```
+
 ## Deploy
 
 Dominio objetivo:

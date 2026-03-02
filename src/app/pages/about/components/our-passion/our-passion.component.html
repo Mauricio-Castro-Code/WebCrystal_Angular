@@ -1,0 +1,41 @@
+<section class="our-passion" aria-labelledby="our-passion-title">
+  <div class="our-passion__shell">
+    <div class="our-passion__grid">
+      <figure class="our-passion__media">
+        <img
+          src="/Chachapa.webp"
+          alt="Montaje profesional de Alquiladora Crystal en evento"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+          width="1280"
+          height="851"
+        />
+        <div class="our-passion__badge" aria-label="Mas de quince anos de experiencia">
+          <strong>30+</strong>
+          <span>Años de excelencia</span>
+        </div>
+      </figure>
+
+      <div class="our-passion__content">
+        <p class="our-passion__eyebrow">Nuestra pasion</p>
+        <h2 id="our-passion-title">Compromiso con el servicio premium</h2>
+        <p>
+          En Alquiladora Crystal entendemos que cada evento cuenta una historia diferente. Por eso
+          combinamos seleccion de mobiliario, planeacion operativa y ejecucion puntual para lograr
+          resultados elegantes y funcionales.
+        </p>
+        <p>
+          Desde reuniones corporativas hasta celebraciones sociales, trabajamos para que cada
+          montaje transmita calidad, orden y una experiencia memorable para tus invitados.
+        </p>
+
+        <ul class="our-passion__highlights">
+          @for (highlight of highlights; track highlight.label) {
+            <li>{{ highlight.label }}</li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

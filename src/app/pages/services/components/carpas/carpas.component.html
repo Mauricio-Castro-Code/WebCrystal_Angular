@@ -1,0 +1,33 @@
+<section class="carpas" aria-labelledby="carpas-title">
+  <div class="carpas__shell">
+    <div class="carpas__grid">
+      <figure class="carpas__media">
+        <img
+          src="/Chachapa.webp"
+          alt="Montaje de carpa para evento al aire libre"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+          width="1280"
+          height="851"
+        />
+      </figure>
+
+      <div class="carpas__content">
+        <h2 id="carpas-title">Instalacion de Carpas</h2>
+        <p>
+          Protege tu evento con estructuras resistentes y una instalacion cuidada desde la
+          planeacion del espacio hasta el desmontaje final.
+        </p>
+
+        <ul class="carpas__benefits">
+          @for (benefit of benefits; track benefit.label) {
+            <li>{{ benefit.label }}</li>
+          }
+        </ul>
+
+        <a class="carpas__cta" routerLink="/contacto">Solicitar asesoria de carpas</a>
+      </div>
+    </div>
+  </div>
+</section>

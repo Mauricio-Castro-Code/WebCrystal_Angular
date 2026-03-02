@@ -1,11 +1,15 @@
-<section class="services-page">
-  <header class="services-page-header">
-    <h1>Servicios</h1>
+<section class="services-hero" aria-labelledby="services-title">
+  <div class="services-hero__shell">
+    <h1 id="services-title">Nuestros Servicios</h1>
+    <span class="services-hero__accent" aria-hidden="true"></span>
     <p>
-      Soluciones integrales para eventos sociales y corporativos.
-      Disenamos propuestas de mobiliario de acuerdo con tu espacio, estilo y presupuesto.
+      Soluciones integrales para eventos sociales y corporativos con mobiliario premium, catering
+      profesional y logistica especializada.
     </p>
-  </header>
-
-  <app-service-list [services]="services"></app-service-list>
+  </div>
 </section>
+
+<app-catering-banquetes></app-catering-banquetes>
+<app-renta-mobiliario></app-renta-mobiliario>
+<app-carpas></app-carpas>
+<app-services-cta-card></app-services-cta-card>

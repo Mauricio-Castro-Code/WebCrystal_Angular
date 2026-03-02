@@ -1,0 +1,12 @@
+<div class="contact-carpas" aria-label="Canales directos">
+  <ul class="contact-carpas__list">
+    @for (channel of channels; track channel.label) {
+      <li class="contact-carpas__item">
+        <a [href]="channel.href" class="contact-carpas__link" rel="noopener noreferrer">
+          <span class="contact-carpas__label">{{ channel.label }}</span>
+          <span class="contact-carpas__value">{{ channel.value }}</span>
+        </a>
+      </li>
+    }
+  </ul>
+</div>

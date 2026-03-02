@@ -30,7 +30,7 @@ export const routes: Routes = [
     title: 'Servicios | Alquiladora Crystal',
     data: {
       description:
-        'Servicios de renta, montaje y logistica para eventos sociales y corporativos en Puebla con mobiliario premium.',
+        'Servicios de catering, renta de mobiliario premium, instalacion de carpas y planeacion integral para eventos en Puebla.',
     },
   },
   {
@@ -40,7 +40,7 @@ export const routes: Routes = [
     title: 'Contacto | Alquiladora Crystal',
     data: {
       description:
-        'Solicita tu cotizacion de mobiliario para eventos. Atencion personalizada para bodas, eventos corporativos y celebraciones sociales.',
+        'Contacta a Alquiladora Crystal por formulario, WhatsApp o telefono para cotizar mobiliario, catering y servicios para eventos en Puebla.',
     },
   },
   {
@@ -50,7 +50,7 @@ export const routes: Routes = [
     title: 'Nosotros | Alquiladora Crystal',
     data: {
       description:
-        'Conoce nuestra mision, vision y equipo especializado en renta de mobiliario para eventos en Puebla.',
+        'Conoce la historia, mision, vision y valores de Alquiladora Crystal, especialistas en renta de mobiliario y logistica para eventos en Puebla.',
     },
   },
   { path: 'about', redirectTo: 'nosotros', pathMatch: 'full' },

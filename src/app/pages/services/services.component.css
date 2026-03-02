@@ -2,52 +2,83 @@
   display: block;
 }
 
-.services-page {
-  width: min(1120px, 92%);
-  margin: 0 auto;
-  padding: 1rem 0 2rem;
+.services-hero {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 106px 0 96px;
+  background:
+    radial-gradient(74% 130% at 100% 0%, rgba(39, 119, 64, 0.2) 0%, rgba(39, 119, 64, 0) 62%),
+    #112959;
+  content-visibility: auto;
+  contain-intrinsic-size: 410px;
 }
 
-.services-page-header {
-  width: min(760px, 100%);
-  margin: 0 auto 1.4rem;
+.services-hero__shell {
+  box-sizing: border-box;
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding-inline: 16px;
   text-align: center;
 }
 
-.services-page-header h1 {
+.services-hero h1 {
   margin: 0;
-  color: #173a72;
-  font-size: clamp(2rem, 4.4vw, 2.8rem);
+  color: #ffffff;
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  font-size: clamp(2.2rem, 5.5vw, 5.1rem);
+  line-height: 1.03;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
 }
 
-.services-page-header p {
-  margin: 0.8rem auto 0;
-  color: #475569;
-  line-height: 1.5;
+.services-hero__accent {
+  display: inline-block;
+  width: 76px;
+  height: 4px;
+  margin-top: 18px;
+  border-radius: 999px;
+  background: #277740;
 }
 
-@media (max-width: 860px) {
-  .services-page {
-    width: 94%;
-    padding: 0.85rem 0 1.8rem;
-  }
+.services-hero p {
+  width: min(760px, 100%);
+  margin: 20px auto 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Inter', 'Inter Tight', 'Segoe UI', sans-serif;
+  font-size: clamp(1rem, 1.6vw, 1.28rem);
+  line-height: 1.6;
+  text-wrap: pretty;
+}
 
-  .services-page-header {
-    margin-bottom: 1.05rem;
+@media (max-width: 900px) {
+  .services-hero {
+    padding: 90px 0 76px;
   }
 }
 
-@media (max-width: 640px) {
-  .services-page {
-    padding: 0.7rem 0 1.5rem;
+@media (max-width: 700px) {
+  .services-hero {
+    padding: 74px 0 60px;
   }
 
-  .services-page-header h1 {
-    font-size: clamp(1.8rem, 8.8vw, 2.2rem);
+  .services-hero__shell {
+    padding-inline: 14px;
   }
 
-  .services-page-header p {
-    font-size: 0.95rem;
-    line-height: 1.45;
+  .services-hero h1 {
+    font-size: clamp(2rem, 10vw, 3.1rem);
+  }
+
+  .services-hero__accent {
+    margin-top: 14px;
+  }
+
+  .services-hero p {
+    margin-top: 16px;
+    font-size: 0.98rem;
   }
 }

@@ -1,0 +1,122 @@
+<section class="send-message" aria-labelledby="send-message-title">
+  <h2 id="send-message-title">Envia tu solicitud</h2>
+
+  <form class="send-message__form" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+    <input
+      type="text"
+      formControlName="website"
+      tabindex="-1"
+      autocomplete="off"
+      class="send-message__trap"
+      aria-hidden="true"
+    />
+
+    <div class="send-message__grid">
+      <div class="field-row">
+        <label for="contact-name">Nombre completo</label>
+        <input
+          id="contact-name"
+          formControlName="nombre"
+          type="text"
+          autocomplete="name"
+          placeholder="Ej. Maria Hernandez"
+          required
+        />
+        @if (
+          contactForm.controls.nombre.invalid &&
+          (contactForm.controls.nombre.touched || submitAttempted())
+        ) {
+          <p class="field-row__error">Ingresa un nombre valido.</p>
+        }
+      </div>
+
+      <div class="field-row">
+        <label for="contact-email">Correo electronico</label>
+        <input
+          id="contact-email"
+          formControlName="correo"
+          type="email"
+          autocomplete="email"
+          placeholder="correo@ejemplo.com"
+          required
+        />
+        @if (
+          contactForm.controls.correo.invalid &&
+          (contactForm.controls.correo.touched || submitAttempted())
+        ) {
+          <p class="field-row__error">Ingresa un correo valido.</p>
+        }
+      </div>
+    </div>
+
+    <div class="send-message__grid">
+      <div class="field-row">
+        <label for="contact-phone">Telefono</label>
+        <input
+          id="contact-phone"
+          formControlName="telefono"
+          type="tel"
+          inputmode="tel"
+          autocomplete="tel"
+          placeholder="222 650 3588"
+          required
+        />
+        @if (
+          contactForm.controls.telefono.invalid &&
+          (contactForm.controls.telefono.touched || submitAttempted())
+        ) {
+          <p class="field-row__error">Ingresa un telefono de contacto.</p>
+        }
+      </div>
+
+      <div class="field-row">
+        <label for="contact-event">Tipo de evento</label>
+        <select id="contact-event" formControlName="tipoEvento" required>
+          <option value="" selected disabled>Selecciona una opcion</option>
+          @for (type of eventTypes; track type) {
+            <option [value]="type">{{ type }}</option>
+          }
+        </select>
+        @if (
+          contactForm.controls.tipoEvento.invalid &&
+          (contactForm.controls.tipoEvento.touched || submitAttempted())
+        ) {
+          <p class="field-row__error">Selecciona un tipo de evento.</p>
+        }
+      </div>
+    </div>
+
+    <div class="field-row">
+      <label for="contact-message">Mensaje</label>
+      <textarea
+        id="contact-message"
+        formControlName="mensaje"
+        rows="5"
+        placeholder="Comparte fecha, ubicacion, numero de invitados y servicios que necesitas."
+        required
+      ></textarea>
+      @if (
+        contactForm.controls.mensaje.invalid &&
+        (contactForm.controls.mensaje.touched || submitAttempted())
+      ) {
+        <p class="field-row__error">Comparte al menos 12 caracteres en tu mensaje.</p>
+      }
+    </div>
+
+    <button type="submit" class="send-message__button" [disabled]="submitState() === 'submitting'">
+      @if (submitState() === 'submitting') {
+        Enviando...
+      } @else {
+        Enviar solicitud
+      }
+    </button>
+
+    @if (submitState() === 'success') {
+      <p class="send-message__feedback send-message__feedback--success">{{ submitMessage() }}</p>
+    }
+
+    @if (submitState() === 'error' && submitMessage()) {
+      <p class="send-message__feedback send-message__feedback--error">{{ submitMessage() }}</p>
+    }
+  </form>
+</section>

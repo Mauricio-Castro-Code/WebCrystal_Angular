@@ -1,11 +1,23 @@
-<section class="contact-page">
-  <header class="contact-page-header">
-    <h1>Contacto</h1>
-    <p>Comparte los detalles de tu evento y te ayudamos a construir una propuesta a medida.</p>
-  </header>
+<section class="contact-hero" aria-labelledby="contact-title">
+  <div class="contact-hero__shell">
+    <h1 id="contact-title">Contacto</h1>
+    <span class="contact-hero__accent" aria-hidden="true"></span>
+    <p>
+      Estamos listos para ayudarte a planear tu proximo evento con atencion personalizada y una
+      propuesta alineada a tu estilo.
+    </p>
+  </div>
+</section>
 
-  <div class="contact-grid">
-    <app-contact-form></app-contact-form>
-    <app-map></app-map>
+<section class="contact-content" aria-label="Canales de contacto y formulario">
+  <div class="contact-content__shell">
+    <div class="contact-content__grid">
+      <app-send-message></app-send-message>
+
+      <div class="contact-content__side">
+        <app-contact-info></app-contact-info>
+        <app-contact-maps></app-contact-maps>
+      </div>
+    </div>
   </div>
 </section>

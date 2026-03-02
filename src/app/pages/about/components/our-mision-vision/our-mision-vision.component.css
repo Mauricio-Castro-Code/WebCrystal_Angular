@@ -1,0 +1,144 @@
+:host {
+  display: block;
+}
+
+.our-mision-vision {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 84px 0 92px;
+  background: #ffffff;
+  content-visibility: auto;
+  contain-intrinsic-size: 720px;
+}
+
+.our-mision-vision__shell {
+  box-sizing: border-box;
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding-inline: 16px;
+}
+
+.our-mision-vision__header {
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+.our-mision-vision__header h2 {
+  margin: 0;
+  color: #112959;
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  font-size: clamp(2.1rem, 4.4vw, 4.1rem);
+  line-height: 1.06;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+.our-mision-vision__accent {
+  display: inline-block;
+  width: 72px;
+  height: 4px;
+  margin-top: 16px;
+  border-radius: 999px;
+  background: #277740;
+}
+
+.our-mision-vision__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+}
+
+.statement-card {
+  border-radius: 18px;
+  background: #f2f2f2;
+  padding: 32px;
+  box-shadow: 0 10px 28px rgba(17, 41, 89, 0.06);
+}
+
+.statement-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: rgba(39, 119, 64, 0.14);
+  color: #277740;
+}
+
+.statement-card__icon svg {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+}
+
+.statement-card h3 {
+  margin: 18px 0 0;
+  color: #112959;
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  font-size: clamp(1.55rem, 2.1vw, 2rem);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.statement-card p {
+  margin: 12px 0 0;
+  color: #4e5c74;
+  font-family: 'Inter', 'Inter Tight', 'Segoe UI', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+@media (max-width: 980px) {
+  .our-mision-vision {
+    padding: 70px 0 76px;
+  }
+
+  .our-mision-vision__header {
+    margin-bottom: 34px;
+  }
+
+  .our-mision-vision__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .our-mision-vision {
+    padding: 56px 0 60px;
+  }
+
+  .our-mision-vision__shell {
+    padding-inline: 14px;
+  }
+
+  .our-mision-vision__header h2 {
+    font-size: clamp(1.9rem, 8.8vw, 2.45rem);
+  }
+
+  .our-mision-vision__accent {
+    margin-top: 14px;
+  }
+
+  .statement-card {
+    padding: 22px;
+  }
+
+  .statement-card__icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .statement-card__icon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .statement-card p {
+    font-size: 14px;
+  }
+}

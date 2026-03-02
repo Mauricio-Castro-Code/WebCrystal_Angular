@@ -1,0 +1,22 @@
+<section class="our-history" aria-labelledby="our-history-title">
+  <div class="our-history__shell">
+    <header class="our-history__header">
+      <h2 id="our-history-title">Nuestra Historia</h2>
+      <span class="our-history__accent" aria-hidden="true"></span>
+      <p>Un camino de crecimiento sostenido, enfoque operativo y compromiso con cada cliente.</p>
+    </header>
+
+    <ol class="our-history__timeline">
+      @for (milestone of milestones; track milestone.period; let isOdd = $odd) {
+        <li class="history-item" [class.history-item--reverse]="isOdd">
+          <article class="history-card">
+            <p class="history-card__period">{{ milestone.period }}</p>
+            <h3 class="history-card__title">{{ milestone.title }}</h3>
+            <p class="history-card__description">{{ milestone.description }}</p>
+          </article>
+          <span class="history-item__dot" aria-hidden="true"></span>
+        </li>
+      }
+    </ol>
+  </div>
+</section>

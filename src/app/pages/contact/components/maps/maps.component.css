@@ -1,0 +1,71 @@
+:host {
+  display: block;
+}
+
+.maps {
+  border-radius: 20px;
+  border: 1px solid rgba(17, 41, 89, 0.1);
+  background: #ffffff;
+  padding: clamp(16px, 2vw, 22px);
+  box-shadow: 0 14px 30px rgba(17, 41, 89, 0.08);
+}
+
+.maps h2 {
+  margin: 0;
+  color: #112959;
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  font-size: clamp(1.25rem, 1.9vw, 1.5rem);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.maps__address {
+  margin: 8px 0 0;
+  color: #4e5c74;
+  font-family: 'Inter', 'Inter Tight', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.maps__frame-wrap {
+  margin-top: 12px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.maps iframe {
+  width: 100%;
+  min-height: 300px;
+  border: 0;
+  display: block;
+}
+
+.maps__link {
+  display: inline-flex;
+  margin-top: 12px;
+  color: #277740;
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.maps__link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .maps {
+    border-radius: 16px;
+    padding: 14px;
+  }
+
+  .maps iframe {
+    min-height: 250px;
+  }
+
+  .maps__address {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,53 @@
+:host {
+  display: block;
+}
+
+.contact-info {
+  border-radius: 20px;
+  border: 1px solid rgba(17, 41, 89, 0.1);
+  background: #ffffff;
+  padding: clamp(20px, 2.3vw, 30px);
+  box-shadow: 0 14px 30px rgba(17, 41, 89, 0.08);
+}
+
+.contact-info h2 {
+  margin: 0;
+  color: #112959;
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.18;
+  font-weight: 700;
+}
+
+.contact-info p {
+  margin: 10px 0 0;
+  color: #4e5c74;
+  font-family: 'Inter', 'Inter Tight', 'Segoe UI', sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+app-contact-carpas {
+  display: block;
+  margin-top: 16px;
+}
+
+@media (max-width: 700px) {
+  .contact-info {
+    border-radius: 16px;
+    padding: 18px 14px;
+  }
+
+  .contact-info h2 {
+    font-size: clamp(1.35rem, 6.3vw, 1.8rem);
+  }
+
+  .contact-info p {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+
+  app-contact-carpas {
+    margin-top: 12px;
+  }
+}

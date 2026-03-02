@@ -1,0 +1,198 @@
+:host {
+  display: block;
+}
+
+.renta-mobiliario {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 84px 0 92px;
+  background: #f8f9fa;
+  content-visibility: auto;
+  contain-intrinsic-size: 840px;
+}
+
+.renta-mobiliario__shell {
+  box-sizing: border-box;
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding-inline: 16px;
+}
+
+.renta-mobiliario__header {
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.renta-mobiliario__header h2 {
+  margin: 0;
+  color: #112959;
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  font-size: clamp(2.05rem, 4.2vw, 3.95rem);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+.renta-mobiliario__accent {
+  display: inline-block;
+  width: 72px;
+  height: 4px;
+  margin-top: 16px;
+  border-radius: 999px;
+  background: #277740;
+}
+
+.renta-mobiliario__header p {
+  width: min(680px, 100%);
+  margin: 16px auto 0;
+  color: #4e5c74;
+  font-family: 'Inter', 'Inter Tight', 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.renta-mobiliario__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.furniture-card {
+  border-radius: 16px;
+  border: 1px solid rgba(17, 41, 89, 0.08);
+  background: #ffffff;
+  padding: 26px;
+  box-shadow: 0 8px 24px rgba(17, 41, 89, 0.05);
+}
+
+.furniture-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(39, 119, 64, 0.12);
+  color: #277740;
+}
+
+.furniture-card__icon svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+.furniture-card h3 {
+  margin: 16px 0 0;
+  color: #112959;
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.furniture-card p {
+  margin: 10px 0 0;
+  color: #4e5c74;
+  font-family: 'Inter', 'Inter Tight', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.renta-mobiliario__actions {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.renta-mobiliario__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  border-radius: 999px;
+  background: #277740;
+  padding: 0 32px;
+  color: #ffffff;
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.renta-mobiliario__button:hover {
+  background: #1f6735;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(23, 70, 38, 0.3);
+}
+
+@media (max-width: 980px) {
+  .renta-mobiliario {
+    padding: 70px 0 76px;
+  }
+
+  .renta-mobiliario__header {
+    margin-bottom: 34px;
+  }
+
+  .renta-mobiliario__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .renta-mobiliario {
+    padding: 56px 0 60px;
+  }
+
+  .renta-mobiliario__shell {
+    padding-inline: 14px;
+  }
+
+  .renta-mobiliario__header h2 {
+    font-size: clamp(1.9rem, 8.8vw, 2.45rem);
+  }
+
+  .renta-mobiliario__accent {
+    margin-top: 14px;
+  }
+
+  .renta-mobiliario__header p {
+    margin-top: 14px;
+    font-size: 15px;
+  }
+
+  .renta-mobiliario__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .furniture-card {
+    padding: 20px;
+  }
+
+  .furniture-card h3 {
+    font-size: 20px;
+  }
+
+  .renta-mobiliario__actions {
+    margin-top: 18px;
+  }
+
+  .renta-mobiliario__button {
+    width: 100%;
+    min-height: 52px;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .renta-mobiliario__button {
+    transition: none;
+  }
+}
