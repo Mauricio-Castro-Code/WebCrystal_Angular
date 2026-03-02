@@ -1,0 +1,31 @@
+<article class="catalog-card" itemscope itemtype="https://schema.org/Product">
+  <div class="catalog-card__media">
+    <img
+      [src]="product.imageSrc"
+      [alt]="product.imageAlt"
+      [attr.width]="product.imageWidth"
+      [attr.height]="product.imageHeight"
+      itemprop="image"
+      loading="lazy"
+      decoding="async"
+      fetchpriority="low"
+    />
+  </div>
+
+  <div class="catalog-card__content">
+    <p class="catalog-card__category">{{ product.categoryLabel }}</p>
+    <h3 itemprop="name">{{ product.name }}</h3>
+
+    <div class="catalog-card__footer">
+      <a
+        [href]="product.quoteUrl"
+        class="catalog-card__cta"
+        target="_blank"
+        rel="noopener noreferrer"
+        [attr.aria-label]="'Cotizar ' + product.name"
+      >
+        Cotizar
+      </a>
+    </div>
+  </div>
+</article>

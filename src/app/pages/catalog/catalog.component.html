@@ -1,7 +1,26 @@
-<section class="catalog-page">
-  <h1>Catalogo</h1>
-  <p>
-    Esta pagina queda lista para integrar categorias, filtros y fichas de producto.
-    La ruta existente se mantiene para no romper enlaces externos.
-  </p>
+<app-catalog-hero></app-catalog-hero>
+
+<section class="catalog-content" aria-label="Listado de productos">
+  <div class="catalog-content__shell">
+    <header class="catalog-content__header">
+      <h2>Productos del catalogo</h2>
+      <p>{{ totalProducts }} articulos en nuestro catalogo base.</p>
+    </header>
+
+    <app-catalog-filters
+      [categories]="categories"
+      [selectedCategory]="selectedCategory()"
+      (categoryChange)="onCategoryChange($event)"
+    ></app-catalog-filters>
+
+    <div class="catalog-content__grid-wrap">
+      <app-catalog-grid [products]="filteredProducts()"></app-catalog-grid>
+    </div>
+
+    @defer (on viewport) {
+      <app-catalog-cta-card [quoteUrl]="ctaQuoteUrl"></app-catalog-cta-card>
+    } @placeholder {
+      <section class="catalog-content__cta-placeholder" aria-hidden="true"></section>
+    }
+  </div>
 </section>

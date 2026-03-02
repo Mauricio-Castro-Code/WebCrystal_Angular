@@ -1,0 +1,12 @@
+@if (products.length) {
+  <section class="catalog-grid" aria-label="Productos del catalogo">
+    @for (product of products; track product.id) {
+      <app-catalog-card [product]="product"></app-catalog-card>
+    }
+  </section>
+} @else {
+  <section class="catalog-grid-empty" aria-live="polite">
+    <h2>Sin resultados para esta categoria</h2>
+    <p>Prueba otra categoria o escribenos para recibir recomendacion personalizada.</p>
+  </section>
+}

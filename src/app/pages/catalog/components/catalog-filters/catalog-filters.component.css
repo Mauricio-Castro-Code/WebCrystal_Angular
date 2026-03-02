@@ -1,0 +1,65 @@
+:host {
+  display: block;
+}
+
+.catalog-filters__chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.catalog-filters__chip {
+  min-height: 46px;
+  border-radius: 999px;
+  border: 1px solid rgba(17, 41, 89, 0.12);
+  background: #ffffff;
+  padding: 0 24px;
+  color: #112959;
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.catalog-filters__chip:hover {
+  transform: translateY(-1px);
+  border-color: rgba(39, 119, 64, 0.36);
+  color: #277740;
+}
+
+.catalog-filters__chip--active,
+.catalog-filters__chip--active:hover {
+  background: #277740;
+  border-color: #277740;
+  color: #ffffff;
+  transform: none;
+}
+
+.catalog-filters__chip:focus-visible {
+  outline: 2px solid rgba(39, 119, 64, 0.42);
+  outline-offset: 2px;
+}
+
+@media (max-width: 700px) {
+  .catalog-filters__chips {
+    justify-content: flex-start;
+  }
+
+  .catalog-filters__chip {
+    min-height: 42px;
+    padding: 0 18px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .catalog-filters__chip {
+    transition: none;
+  }
+}

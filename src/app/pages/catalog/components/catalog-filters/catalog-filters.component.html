@@ -1,0 +1,15 @@
+<section class="catalog-filters" aria-label="Filtro de categorias">
+  <div class="catalog-filters__chips">
+    @for (category of categories; track category.id) {
+      <button
+        type="button"
+        class="catalog-filters__chip"
+        [class.catalog-filters__chip--active]="category.id === selectedCategory"
+        [attr.aria-pressed]="category.id === selectedCategory"
+        (click)="selectCategory(category.id)"
+      >
+        {{ category.label }}
+      </button>
+    }
+  </div>
+</section>

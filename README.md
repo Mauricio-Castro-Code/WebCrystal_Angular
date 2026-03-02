@@ -103,6 +103,24 @@ Archivos SEO relevantes:
 - `public/robots.txt`
 - `public/sitemap.xml`
 
+## Catalogo de productos
+
+El catalogo esta desacoplado en componentes y datos tipados:
+
+- `src/app/pages/catalog/components/*`
+- `src/app/pages/catalog/data/catalog-products.data.ts`
+- `src/app/pages/catalog/models/catalog-product.model.ts`
+
+Para editar productos hoy, cambia el archivo de datos (`catalog-products.data.ts`) sin tocar el layout.
+
+Escalamiento recomendado:
+
+1. Fase 1 (actual): datos tipados en el repo (maximo control de SEO y rendimiento, cero latencia extra).
+2. Fase 2: JSON versionado en `public/data` o bucket S3 + CloudFront con cache largo.
+3. Fase 3: CMS/headless + API con SSR/SSG para mantener indexacion SEO.
+
+Si se usa S3, publicar solo JSON e imagenes optimizadas, y consumirlo desde SSR para que el HTML ya salga renderizado para buscadores.
+
 ## Formulario de contacto funcional
 
 El formulario de `/contacto` envia datos al endpoint backend `POST /api/contact` (SSR/Express) y este endpoint reenvia la solicitud por email usando Resend.
