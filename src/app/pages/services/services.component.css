@@ -2,6 +2,24 @@
   display: block;
 }
 
+.services-placeholder {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.services-placeholder--carpas {
+  min-height: 300px;
+  background: #ffffff;
+}
+
+.services-placeholder--cta {
+  min-height: 220px;
+  background: #f2f2f2;
+}
+
 .services-hero {
   position: relative;
   left: 50%;

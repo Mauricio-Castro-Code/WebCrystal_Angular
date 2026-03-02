@@ -2,5 +2,13 @@
 <app-our-services></app-our-services>
 <app-barra-confianza></app-barra-confianza>
 <app-convenios></app-convenios>
-<app-faq></app-faq>
-<app-testimonials></app-testimonials>
+@defer (on viewport) {
+  <app-faq></app-faq>
+} @placeholder {
+  <section class="home-placeholder home-placeholder--faq" aria-hidden="true"></section>
+}
+@defer (on viewport) {
+  <app-testimonials></app-testimonials>
+} @placeholder {
+  <section class="home-placeholder home-placeholder--testimonials" aria-hidden="true"></section>
+}

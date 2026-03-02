@@ -53,7 +53,9 @@ src/app
 ```bash
 npm install
 npm start
+npm run start:prod
 npm run build
+npm run build:prod
 npm run test
 ```
 
@@ -76,6 +78,20 @@ npm start
 ```text
 http://localhost:4200
 ```
+
+## Prueba de Lighthouse (importante)
+
+Para medir rendimiento real, evita Lighthouse sobre `npm start` (modo desarrollo).
+
+Usa:
+
+```bash
+npm run start:prod
+```
+
+y corre Lighthouse en `http://localhost:4200`.
+
+En modo dev Angular desactiva optimizaciones y los scores de Performance salen artificialmente mas bajos.
 
 ## SEO y archivos publicos
 

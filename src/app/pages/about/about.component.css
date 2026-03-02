@@ -2,6 +2,24 @@
   display: block;
 }
 
+.about-placeholder {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.about-placeholder--values {
+  min-height: 280px;
+  background: #f2f2f2;
+}
+
+.about-placeholder--cta {
+  min-height: 240px;
+  background: #ffffff;
+}
+
 .about-hero {
   position: relative;
   left: 50%;

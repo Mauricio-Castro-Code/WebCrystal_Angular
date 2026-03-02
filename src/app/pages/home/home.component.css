@@ -2,3 +2,20 @@
   display: block;
 }
 
+.home-placeholder {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: #f2f2f2;
+}
+
+.home-placeholder--faq {
+  min-height: 260px;
+}
+
+.home-placeholder--testimonials {
+  min-height: 240px;
+  background: #f8f9fa;
+}

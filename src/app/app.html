@@ -3,5 +3,13 @@
 <main class="page-shell" [class.home-shell]="isInicioRoute">
   <router-outlet />
 </main>
-<app-button-cotizar />
-<app-footer />
+
+@defer (on idle) {
+  <app-button-cotizar />
+}
+
+@defer (on viewport) {
+  <app-footer />
+} @placeholder {
+  <div class="app-footer-placeholder" aria-hidden="true"></div>
+}

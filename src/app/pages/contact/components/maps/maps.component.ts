@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-contact-maps',
@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
   templateUrl: './maps.component.html',
   styleUrl: './maps.component.css',
 })
-export class MapsComponent {}
+export class MapsComponent {
+  protected readonly mapLoaded = signal(false);
+
+  protected loadMap(): void {
+    this.mapLoaded.set(true);
+  }
+}

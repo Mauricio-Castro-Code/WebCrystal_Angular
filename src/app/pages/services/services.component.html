@@ -11,5 +11,13 @@
 
 <app-catering-banquetes></app-catering-banquetes>
 <app-renta-mobiliario></app-renta-mobiliario>
-<app-carpas></app-carpas>
-<app-services-cta-card></app-services-cta-card>
+@defer (on viewport) {
+  <app-carpas></app-carpas>
+} @placeholder {
+  <section class="services-placeholder services-placeholder--carpas" aria-hidden="true"></section>
+}
+@defer (on viewport) {
+  <app-services-cta-card></app-services-cta-card>
+} @placeholder {
+  <section class="services-placeholder services-placeholder--cta" aria-hidden="true"></section>
+}

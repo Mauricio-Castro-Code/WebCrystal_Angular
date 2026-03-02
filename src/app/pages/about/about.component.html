@@ -12,5 +12,13 @@
 <app-our-passion></app-our-passion>
 <app-our-history></app-our-history>
 <app-our-mision-vision></app-our-mision-vision>
-<app-our-values></app-our-values>
-<app-cta-card></app-cta-card>
+@defer (on viewport) {
+  <app-our-values></app-our-values>
+} @placeholder {
+  <section class="about-placeholder about-placeholder--values" aria-hidden="true"></section>
+}
+@defer (on viewport) {
+  <app-cta-card></app-cta-card>
+} @placeholder {
+  <section class="about-placeholder about-placeholder--cta" aria-hidden="true"></section>
+}
