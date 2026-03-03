@@ -1,4 +1,4 @@
-export type CatalogCategoryId = 'manteleria' | 'mobiliario' | 'loza' | 'otros';
+export type CatalogCategoryId = 'manteleria' | 'mobiliario' | 'loza' | 'cristaleria' | 'otros';
 
 export type CatalogProductCategoryId = CatalogCategoryId;
 
