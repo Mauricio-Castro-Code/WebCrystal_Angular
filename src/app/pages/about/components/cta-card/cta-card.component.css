@@ -8,14 +8,13 @@
   width: 100vw;
   margin-left: -50vw;
   margin-right: -50vw;
-  padding: 84px 0 100px;
-  background: #ffffff;
+  padding: clamp(56px, 7vw, 100px) 0;
+  background: var(--color-surface, #ffffff);
   content-visibility: auto;
   contain-intrinsic-size: 500px;
 }
 
 .cta-card__shell {
-  box-sizing: border-box;
   width: min(1200px, 100%);
   margin: 0 auto;
   padding-inline: 16px;
@@ -24,21 +23,21 @@
 .cta-card__panel {
   position: relative;
   overflow: hidden;
-  border-radius: 32px;
+  border-radius: var(--radius-xl, 32px);
   background:
-    radial-gradient(80% 160% at 100% 0%, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 65%),
-    linear-gradient(120deg, #277740 0%, #2e8449 100%);
-  padding: clamp(32px, 5vw, 72px) clamp(20px, 7vw, 84px);
+    radial-gradient(80% 160% at 100% 0%, rgba(255, 255, 255, 0.15) 0%, transparent 60%),
+    linear-gradient(135deg, var(--color-green, #277740), var(--color-green-light, #2e8a4a));
+  padding: clamp(32px, 5vw, 72px) clamp(24px, 7vw, 84px);
   text-align: center;
-  box-shadow: 0 18px 44px rgba(39, 119, 64, 0.24);
+  box-shadow: 0 20px 50px rgba(39, 119, 64, 0.2);
 }
 
 .cta-card__panel h2 {
-  width: min(900px, 100%);
+  width: min(860px, 100%);
   margin: 0 auto;
   color: #ffffff;
-  font-family: 'Montserrat', 'Segoe UI', sans-serif;
-  font-size: clamp(2.05rem, 4.4vw, 4.2rem);
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: clamp(1.9rem, 4vw, 3.5rem);
   line-height: 1.1;
   font-weight: 700;
   letter-spacing: -0.015em;
@@ -46,11 +45,11 @@
 }
 
 .cta-card__panel p {
-  width: min(760px, 100%);
-  margin: 20px auto 0;
-  color: rgba(255, 255, 255, 0.86);
-  font-family: 'Inter', 'Inter Tight', 'Segoe UI', sans-serif;
-  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  width: min(700px, 100%);
+  margin: 18px auto 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-family: var(--font-body, 'Lato', sans-serif);
+  font-size: clamp(0.95rem, 1.3vw, 1.2rem);
   line-height: 1.6;
   text-wrap: pretty;
 }
@@ -59,24 +58,26 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 64px;
-  margin-top: 34px;
-  border-radius: 999px;
+  min-height: 58px;
+  margin-top: 2rem;
+  border-radius: var(--radius-pill, 999px);
   background: #ffffff;
-  padding: 0 40px;
-  color: #277740;
-  font-family: 'Montserrat', 'Segoe UI', sans-serif;
-  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  padding: 0 2.5rem;
+  color: var(--color-green, #277740);
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: clamp(0.92rem, 1.2vw, 1.1rem);
   line-height: 1;
   font-weight: 700;
   text-decoration: none;
-  transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition:
+    transform var(--transition-fast, 0.18s ease),
+    box-shadow var(--transition-base, 0.28s ease);
 }
 
 .cta-card__button:hover {
-  transform: translateY(-1px);
-  background: #f3f6f4;
-  box-shadow: 0 12px 26px rgba(17, 41, 89, 0.22);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .cta-card__button:focus-visible {
@@ -85,48 +86,24 @@
 }
 
 @media (max-width: 900px) {
-  .cta-card {
-    padding: 70px 0 76px;
-  }
-
   .cta-card__panel {
-    border-radius: 24px;
-  }
-
-  .cta-card__button {
-    min-height: 58px;
-    margin-top: 28px;
-    padding: 0 30px;
+    border-radius: var(--radius-lg, 24px);
   }
 }
 
 @media (max-width: 700px) {
-  .cta-card {
-    padding: 56px 0 60px;
-  }
-
   .cta-card__shell {
     padding-inline: 14px;
   }
 
   .cta-card__panel {
-    padding: 34px 18px 38px;
-  }
-
-  .cta-card__panel h2 {
-    font-size: clamp(1.9rem, 8.6vw, 2.45rem);
-  }
-
-  .cta-card__panel p {
-    margin-top: 14px;
-    font-size: 15px;
+    padding: 30px 18px 34px;
   }
 
   .cta-card__button {
     width: 100%;
-    min-height: 56px;
-    padding: 0 20px;
-    font-size: 0.98rem;
+    text-align: center;
+    font-size: 0.92rem;
   }
 }
 

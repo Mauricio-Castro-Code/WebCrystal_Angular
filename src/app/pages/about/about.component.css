@@ -12,12 +12,12 @@
 
 .about-placeholder--values {
   min-height: 280px;
-  background: #f2f2f2;
+  background: var(--color-bg, #f8fafb);
 }
 
 .about-placeholder--cta {
   min-height: 240px;
-  background: #ffffff;
+  background: var(--color-surface, #ffffff);
 }
 
 .about-hero {
@@ -26,16 +26,15 @@
   width: 100vw;
   margin-left: -50vw;
   margin-right: -50vw;
-  padding: 108px 0 96px;
+  padding: clamp(74px, 9vw, 108px) 0 clamp(60px, 7vw, 96px);
   background:
-    radial-gradient(70% 120% at 100% 0%, rgba(39, 119, 64, 0.2) 0%, rgba(39, 119, 64, 0) 62%),
-    #112959;
+    radial-gradient(70% 120% at 100% 0%, rgba(39, 119, 64, 0.15) 0%, transparent 60%),
+    linear-gradient(135deg, var(--color-blue-deep, #112959), var(--color-blue-medium, #173a72));
   content-visibility: auto;
   contain-intrinsic-size: 420px;
 }
 
 .about-hero__shell {
-  box-sizing: border-box;
   width: min(1200px, 100%);
   margin: 0 auto;
   padding-inline: 16px;
@@ -45,9 +44,9 @@
 .about-hero h1 {
   margin: 0;
   color: #ffffff;
-  font-family: 'Montserrat', 'Segoe UI', sans-serif;
-  font-size: clamp(2.2rem, 5.5vw, 5.1rem);
-  line-height: 1.03;
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: clamp(2rem, 5vw, 4.2rem);
+  line-height: 1.06;
   font-weight: 700;
   letter-spacing: -0.02em;
   text-transform: uppercase;
@@ -55,48 +54,29 @@
 
 .about-hero__accent {
   display: inline-block;
-  width: 76px;
-  height: 6px;
-  margin-top: 18px;
-  border-radius: 999px;
-  background: #277740;
+  width: 56px;
+  height: 4px;
+  margin-top: 16px;
+  border-radius: var(--radius-pill, 999px);
+  background: linear-gradient(90deg, var(--color-green, #277740), var(--color-green-light, #2e8a4a));
 }
 
 .about-hero p {
-  width: min(760px, 100%);
-  margin: 20px auto 0;
-  color: rgba(255, 255, 255, 0.8);
-  font-family: 'Inter', 'Inter Tight', 'Segoe UI', sans-serif;
-  font-size: clamp(1rem, 1.6vw, 1.28rem);
+  width: min(700px, 100%);
+  margin: 18px auto 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-family: var(--font-body, 'Lato', sans-serif);
+  font-size: clamp(0.95rem, 1.4vw, 1.2rem);
   line-height: 1.6;
   text-wrap: pretty;
 }
 
-@media (max-width: 900px) {
-  .about-hero {
-    padding: 90px 0 76px;
-  }
-}
-
 @media (max-width: 700px) {
-  .about-hero {
-    padding: 74px 0 60px;
-  }
-
   .about-hero__shell {
     padding-inline: 14px;
   }
 
-  .about-hero h1 {
-    font-size: clamp(2rem, 10vw, 3.1rem);
-  }
-
   .about-hero__accent {
-    margin-top: 14px;
-  }
-
-  .about-hero p {
-    margin-top: 16px;
-    font-size: 0.98rem;
+    margin-top: 12px;
   }
 }

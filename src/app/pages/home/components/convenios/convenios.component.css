@@ -8,14 +8,13 @@
   width: 100vw;
   margin-left: -50vw;
   margin-right: -50vw;
-  padding: 84px 0 92px;
-  background: #f2f2f2;
+  padding: clamp(56px, 7vw, 92px) 0;
+  background: var(--color-bg, #f8fafb);
   content-visibility: auto;
   contain-intrinsic-size: 520px;
 }
 
 .convenios-shell {
-  box-sizing: border-box;
   width: min(1200px, 100%);
   margin: 0 auto;
   padding-inline: 16px;
@@ -25,34 +24,34 @@
   position: relative;
   overflow: hidden;
   margin: 0 auto;
-  border-radius: 44px;
+  border-radius: var(--radius-xl, 32px);
   background:
-    radial-gradient(75% 140% at 86% 12%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 60%),
-    linear-gradient(120deg, #112959 0%, #173a72 55%, #17366b 100%);
-  padding: clamp(40px, 5vw, 72px) clamp(20px, 6vw, 84px);
+    radial-gradient(80% 140% at 90% 10%, rgba(39, 119, 64, 0.15) 0%, transparent 60%),
+    linear-gradient(135deg, var(--color-blue-deep, #112959) 0%, var(--color-blue-medium, #173a72) 100%);
+  padding: clamp(40px, 5vw, 72px) clamp(24px, 6vw, 84px);
   text-align: center;
-  box-shadow: 0 16px 44px rgba(17, 41, 89, 0.22);
+  box-shadow: var(--shadow-xl, 0 20px 50px rgba(17, 41, 89, 0.14));
 }
 
 .convenios-cta h2 {
-  width: min(980px, 100%);
+  width: min(900px, 100%);
   margin: 0 auto;
   color: #ffffff;
-  font-family: 'Montserrat', 'Segoe UI', sans-serif;
-  font-size: 42px;
-  line-height: 1.08;
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  line-height: 1.1;
   font-weight: 700;
   letter-spacing: -0.02em;
   text-wrap: balance;
 }
 
 .convenios-cta__description {
-  width: min(760px, 100%);
-  margin: 26px auto 0;
-  color: rgba(255, 255, 255, 0.72);
-  font-family: 'Inter', 'Inter Tight', 'Segoe UI', sans-serif;
-  font-size: 28px;
-  line-height: 1.45;
+  width: min(700px, 100%);
+  margin: 1.25rem auto 0;
+  color: rgba(255, 255, 255, 0.65);
+  font-family: var(--font-body, 'Lato', sans-serif);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.55;
   text-wrap: pretty;
 }
 
@@ -60,24 +59,27 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 74px;
-  margin-top: 40px;
-  border-radius: 999px;
-  background: #277740;
-  padding: 0 46px;
+  min-height: 62px;
+  margin-top: 2rem;
+  border-radius: var(--radius-pill, 999px);
+  background: linear-gradient(135deg, var(--color-green, #277740), var(--color-green-light, #2e8a4a));
+  padding: 0 2.5rem;
   color: #ffffff;
-  font-family: 'Montserrat', 'Segoe UI', sans-serif;
-  font-size: clamp(1rem, 1.55vw, 1.9rem);
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: clamp(0.92rem, 1.3vw, 1.1rem);
   line-height: 1.1;
   font-weight: 700;
   text-decoration: none;
-  transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease;
+  box-shadow: 0 6px 24px rgba(39, 119, 64, 0.3);
+  transition:
+    transform var(--transition-fast, 0.18s ease),
+    box-shadow var(--transition-base, 0.28s ease),
+    background-color var(--transition-fast, 0.18s ease);
 }
 
 .convenios-cta__button:hover {
-  transform: translateY(-1px);
-  background: #1f6735;
-  box-shadow: 0 14px 30px rgba(23, 70, 38, 0.38);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(39, 119, 64, 0.4);
 }
 
 .convenios-cta__button:focus-visible {
@@ -86,51 +88,26 @@
 }
 
 @media (max-width: 900px) {
-  .convenios {
-    padding: 68px 0 72px;
-  }
-
   .convenios-cta {
-    border-radius: 30px;
-    padding: 38px 20px 40px;
-  }
-
-  .convenios-cta__description {
-    margin-top: 18px;
+    border-radius: var(--radius-lg, 24px);
+    padding: 2rem 1.25rem 2.25rem;
   }
 
   .convenios-cta__button {
-    min-height: 62px;
-    margin-top: 28px;
-    padding: 0 30px;
-    font-size: 1.02rem;
+    min-height: 56px;
+    margin-top: 1.5rem;
+    padding: 0 2rem;
   }
 }
 
 @media (max-width: 640px) {
-  .convenios {
-    padding: 56px 0 60px;
-  }
-
   .convenios-shell {
     padding-inline: 14px;
   }
 
-  .convenios-cta h2 {
-    font-size: clamp(1.95rem, 9vw, 2.45rem);
-    line-height: 1.12;
-  }
-
-  .convenios-cta__description {
-    font-size: 1rem;
-  }
-
   .convenios-cta__button {
     width: 100%;
-    min-height: 58px;
-    padding: 0 22px;
     text-align: center;
-    font-size: 0.98rem;
   }
 }
 

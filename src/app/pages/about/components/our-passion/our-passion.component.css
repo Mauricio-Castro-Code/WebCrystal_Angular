@@ -8,14 +8,13 @@
   width: 100vw;
   margin-left: -50vw;
   margin-right: -50vw;
-  padding: 86px 0 92px;
-  background: #ffffff;
+  padding: clamp(56px, 7vw, 92px) 0;
+  background: var(--color-surface, #ffffff);
   content-visibility: auto;
   contain-intrinsic-size: 920px;
 }
 
 .our-passion__shell {
-  box-sizing: border-box;
   width: min(1200px, 100%);
   margin: 0 auto;
   padding-inline: 16px;
@@ -24,22 +23,22 @@
 .our-passion__grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(24px, 3.2vw, 46px);
+  gap: clamp(24px, 3.2vw, 48px);
   align-items: center;
 }
 
 .our-passion__media {
   position: relative;
   margin: 0;
-  border-radius: 22px;
+  border-radius: var(--radius-lg, 24px);
   overflow: hidden;
-  background: #e9edf3;
-  box-shadow: 0 16px 40px rgba(17, 41, 89, 0.12);
+  background: var(--color-bg-alt, #f1f4f8);
+  box-shadow: var(--shadow-lg, 0 12px 40px rgba(17, 41, 89, 0.10));
 }
 
 .our-passion__media img {
   width: 100%;
-  height: 100%;
+  height: 40%;
   min-height: 480px;
   object-fit: cover;
   display: block;
@@ -47,28 +46,29 @@
 
 .our-passion__badge {
   position: absolute;
-  right: 20px;
-  bottom: 20px;
+  right: 16px;
+  bottom: 16px;
   display: grid;
-  gap: 3px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.95);
+  gap: 2px;
+  border-radius: var(--radius-md, 16px);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
   padding: 12px 16px;
-  box-shadow: 0 8px 24px rgba(17, 41, 89, 0.18);
+  box-shadow: var(--shadow-md, 0 4px 16px rgba(17, 41, 89, 0.08));
 }
 
 .our-passion__badge strong {
-  color: #112959;
-  font-family: 'Montserrat', 'Segoe UI', sans-serif;
-  font-size: 30px;
+  color: var(--color-blue-deep, #112959);
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: 1.75rem;
   line-height: 1;
   font-weight: 700;
 }
 
 .our-passion__badge span {
-  color: #277740;
-  font-family: 'Inter', 'Inter Tight', 'Segoe UI', sans-serif;
-  font-size: 13px;
+  color: var(--color-green, #277740);
+  font-family: var(--font-body, 'Lato', sans-serif);
+  font-size: 0.75rem;
   line-height: 1.35;
   font-weight: 700;
   text-transform: uppercase;
@@ -79,12 +79,12 @@
   display: inline-flex;
   align-items: center;
   margin: 0;
-  border-radius: 999px;
-  background: rgba(39, 119, 64, 0.12);
-  padding: 7px 14px;
-  color: #277740;
-  font-family: 'Inter', 'Inter Tight', 'Segoe UI', sans-serif;
-  font-size: 12px;
+  border-radius: var(--radius-pill, 999px);
+  background: var(--color-green-soft, rgba(39, 119, 64, 0.10));
+  padding: 7px 16px;
+  color: var(--color-green, #277740);
+  font-family: var(--font-body, 'Lato', sans-serif);
+  font-size: 0.75rem;
   line-height: 1;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -92,83 +92,75 @@
 }
 
 .our-passion__content h2 {
-  margin: 16px 0 0;
-  color: #112959;
-  font-family: 'Montserrat', 'Segoe UI', sans-serif;
-  font-size: clamp(2rem, 3.8vw, 3.25rem);
-  line-height: 1.08;
+  margin: 14px 0 0;
+  color: var(--color-blue-deep, #112959);
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  line-height: 1.1;
   font-weight: 700;
   letter-spacing: -0.015em;
   text-wrap: balance;
 }
 
 .our-passion__content p {
-  margin: 16px 0 0;
-  color: #4e5c74;
-  font-family: 'Inter', 'Inter Tight', 'Segoe UI', sans-serif;
-  font-size: 16px;
+  margin: 14px 0 0;
+  color: var(--color-text-muted, #64748b);
+  font-family: var(--font-body, 'Lato', sans-serif);
+  font-size: 0.95rem;
   line-height: 1.7;
   text-wrap: pretty;
 }
 
 .our-passion__highlights {
-  margin: 22px 0 0;
+  margin: 20px 0 0;
   padding: 0;
   list-style: none;
   display: grid;
-  gap: 10px;
+  gap: 8px;
 }
 
 .our-passion__highlights li {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  color: #112959;
-  font-family: 'Montserrat', 'Segoe UI', sans-serif;
-  font-size: 15px;
+  color: var(--color-blue-deep, #112959);
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: 0.9rem;
   line-height: 1.5;
   font-weight: 600;
 }
 
 .our-passion__highlights li::before {
   content: '';
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   margin-top: 8px;
   border-radius: 50%;
-  background: #277740;
+  background: var(--color-green, #277740);
   flex: 0 0 auto;
 }
 
 @media (max-width: 980px) {
-  .our-passion {
-    padding: 70px 0 76px;
-  }
-
   .our-passion__grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
   .our-passion__media img {
-    min-height: 380px;
+    min-height: 360px;
   }
 }
 
 @media (max-width: 700px) {
-  .our-passion {
-    padding: 56px 0 60px;
-  }
-
   .our-passion__shell {
     padding-inline: 14px;
   }
 
   .our-passion__media {
-    border-radius: 16px;
+    border-radius: var(--radius-md, 16px);
   }
 
   .our-passion__media img {
-    min-height: 300px;
+    min-height: 280px;
   }
 
   .our-passion__badge {
@@ -178,27 +170,14 @@
   }
 
   .our-passion__badge strong {
-    font-size: 24px;
+    font-size: 1.4rem;
   }
 
   .our-passion__badge span {
-    font-size: 11px;
-  }
-
-  .our-passion__content h2 {
-    font-size: clamp(1.9rem, 8.6vw, 2.4rem);
-  }
-
-  .our-passion__content p {
-    margin-top: 14px;
-    font-size: 15px;
-  }
-
-  .our-passion__highlights {
-    margin-top: 16px;
+    font-size: 0.68rem;
   }
 
   .our-passion__highlights li {
-    font-size: 14px;
+    font-size: 0.85rem;
   }
 }

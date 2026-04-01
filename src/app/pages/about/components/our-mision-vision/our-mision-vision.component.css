@@ -8,137 +8,128 @@
   width: 100vw;
   margin-left: -50vw;
   margin-right: -50vw;
-  padding: 84px 0 92px;
-  background: #ffffff;
+  padding: clamp(56px, 7vw, 92px) 0;
+  background: var(--color-surface, #ffffff);
   content-visibility: auto;
   contain-intrinsic-size: 720px;
 }
 
 .our-mision-vision__shell {
-  box-sizing: border-box;
   width: min(1200px, 100%);
   margin: 0 auto;
   padding-inline: 16px;
 }
 
 .our-mision-vision__header {
-  margin: 0 auto 44px;
+  margin: 0 auto clamp(2rem, 3.5vw, 3rem);
   text-align: center;
 }
 
 .our-mision-vision__header h2 {
   margin: 0;
-  color: #112959;
-  font-family: 'Montserrat', 'Segoe UI', sans-serif;
-  font-size: clamp(2.1rem, 4.4vw, 4.1rem);
-  line-height: 1.06;
+  color: var(--color-blue-deep, #112959);
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.08;
   font-weight: 700;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
 }
 
 .our-mision-vision__accent {
   display: inline-block;
-  width: 72px;
+  width: 48px;
   height: 4px;
-  margin-top: 16px;
-  border-radius: 999px;
-  background: #277740;
+  margin-top: 14px;
+  border-radius: var(--radius-pill, 999px);
+  background: linear-gradient(90deg, var(--color-green, #277740), var(--color-green-light, #2e8a4a));
 }
 
 .our-mision-vision__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 30px;
+  gap: 24px;
 }
 
 .statement-card {
-  border-radius: 18px;
-  background: #f2f2f2;
-  padding: 32px;
-  box-shadow: 0 10px 28px rgba(17, 41, 89, 0.06);
+  border-radius: var(--radius-lg, 24px);
+  background: var(--color-bg, #f8fafb);
+  border: 1px solid var(--color-border, rgba(17, 41, 89, 0.08));
+  padding: 30px;
+  transition:
+    transform var(--transition-base, 0.28s ease),
+    box-shadow var(--transition-base, 0.28s ease),
+    border-color var(--transition-fast, 0.18s ease);
+}
+
+.statement-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md, 0 4px 16px rgba(17, 41, 89, 0.08));
+  border-color: var(--color-green-glow, rgba(39, 119, 64, 0.25));
 }
 
 .statement-card__icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: rgba(39, 119, 64, 0.14);
-  color: #277740;
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-md, 16px);
+  background: linear-gradient(135deg, var(--color-green-soft, rgba(39, 119, 64, 0.10)), rgba(39, 119, 64, 0.05));
+  color: var(--color-green, #277740);
 }
 
 .statement-card__icon svg {
-  width: 30px;
-  height: 30px;
-  fill: currentColor;
+  width: 28px;
+  height: 28px;
 }
 
 .statement-card h3 {
-  margin: 18px 0 0;
-  color: #112959;
-  font-family: 'Montserrat', 'Segoe UI', sans-serif;
-  font-size: clamp(1.55rem, 2.1vw, 2rem);
+  margin: 16px 0 0;
+  color: var(--color-blue-deep, #112959);
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: clamp(1.4rem, 1.8vw, 1.75rem);
   line-height: 1.2;
   font-weight: 700;
 }
 
 .statement-card p {
-  margin: 12px 0 0;
-  color: #4e5c74;
-  font-family: 'Inter', 'Inter Tight', 'Segoe UI', sans-serif;
-  font-size: 15px;
+  margin: 10px 0 0;
+  color: var(--color-text-muted, #64748b);
+  font-family: var(--font-body, 'Lato', sans-serif);
+  font-size: 0.9rem;
   line-height: 1.7;
 }
 
 @media (max-width: 980px) {
-  .our-mision-vision {
-    padding: 70px 0 76px;
-  }
-
-  .our-mision-vision__header {
-    margin-bottom: 34px;
-  }
-
   .our-mision-vision__grid {
     grid-template-columns: minmax(0, 1fr);
-    gap: 18px;
+    gap: 16px;
   }
 }
 
 @media (max-width: 700px) {
-  .our-mision-vision {
-    padding: 56px 0 60px;
-  }
-
   .our-mision-vision__shell {
     padding-inline: 14px;
   }
 
-  .our-mision-vision__header h2 {
-    font-size: clamp(1.9rem, 8.8vw, 2.45rem);
-  }
-
-  .our-mision-vision__accent {
-    margin-top: 14px;
-  }
-
   .statement-card {
     padding: 22px;
+    border-radius: var(--radius-md, 16px);
   }
 
   .statement-card__icon {
-    width: 52px;
-    height: 52px;
+    width: 48px;
+    height: 48px;
   }
 
   .statement-card__icon svg {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
   }
+}
 
-  .statement-card p {
-    font-size: 14px;
+@media (prefers-reduced-motion: reduce) {
+  .statement-card {
+    transition: none;
   }
 }

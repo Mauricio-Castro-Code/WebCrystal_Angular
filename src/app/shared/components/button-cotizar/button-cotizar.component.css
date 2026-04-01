@@ -4,8 +4,8 @@
 
 .floating-button {
   position: fixed !important;
-  right: max(12px, calc(env(safe-area-inset-right) + 8px));
-  bottom: max(12px, calc(env(safe-area-inset-bottom) + 8px));
+  right: max(14px, calc(env(safe-area-inset-right) + 10px));
+  bottom: max(14px, calc(env(safe-area-inset-bottom) + 10px));
   z-index: 1200;
   display: inline-flex;
   align-items: center;
@@ -22,8 +22,10 @@
   display: block;
   object-fit: contain;
   border-radius: 50%;
-  box-shadow: 0 10px 24px -14px rgba(0, 0, 0, 0.6);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 24px rgba(39, 119, 64, 0.35);
+  transition:
+    transform var(--transition-fast, 0.18s ease),
+    box-shadow var(--transition-base, 0.28s ease);
 }
 
 .floating-button span {
@@ -34,21 +36,22 @@
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  background-color: #277740;
+  background: linear-gradient(135deg, var(--color-green, #277740), var(--color-green-light, #2e8a4a));
   color: #fff;
-  padding: 0.5rem 0.72rem;
-  border-radius: 8px;
-  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
-  font-size: 0.84rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm, 10px);
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: 0.82rem;
   font-weight: 700;
   white-space: nowrap;
+  box-shadow: var(--shadow-md, 0 4px 16px rgba(17, 41, 89, 0.08));
   transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 
 .floating-button:hover .whatsapp-icon,
 .floating-button:focus-visible .whatsapp-icon {
-  transform: scale(1.06);
-  box-shadow: 0 16px 32px -16px rgba(39, 119, 64, 0.72);
+  transform: scale(1.08);
+  box-shadow: 0 12px 32px rgba(39, 119, 64, 0.45);
 }
 
 .floating-button:hover span,
@@ -77,12 +80,12 @@
 
 @media (max-width: 480px) {
   .floating-button {
-    width: 54px;
-    height: 54px;
+    width: 52px;
+    height: 52px;
   }
 
   .whatsapp-icon {
-    width: 54px;
-    height: 54px;
+    width: 52px;
+    height: 52px;
   }
 }

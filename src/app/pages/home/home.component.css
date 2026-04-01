@@ -8,7 +8,7 @@
   width: 100vw;
   margin-left: -50vw;
   margin-right: -50vw;
-  background: #f2f2f2;
+  background: var(--color-bg, #f8fafb);
 }
 
 .home-placeholder--faq {
@@ -17,5 +17,5 @@
 
 .home-placeholder--testimonials {
   min-height: 240px;
-  background: #f8f9fa;
+  background: var(--color-surface, #ffffff);
 }
