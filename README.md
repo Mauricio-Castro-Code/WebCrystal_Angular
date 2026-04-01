@@ -129,21 +129,25 @@ Variables de entorno requeridas:
 
 - `RESEND_API_KEY`: API key de Resend.
 - `CONTACT_TO_EMAIL`: correo destino que recibira las solicitudes (ej. `hola@alquiladoracrystal.com`).
-- `CONTACT_FROM_EMAIL`: remitente validado en Resend (ej. `Alquiladora Crystal <noreply@tudominio.com>`).
+- `CONTACT_FROM_EMAIL`: remitente validado en Resend (en local puedes usar `Alquiladora Crystal <onboarding@resend.dev>`).
 
 Pasos recomendados:
 
 1. Crear cuenta en [Resend](https://resend.com) y generar API key.
 2. Verificar dominio/remitente en Resend para produccion.
-3. Configurar variables en el entorno de deploy (Vercel/servidor).
-4. Probar envio desde la pagina `/contacto`.
+3. Crear un archivo `.env` local (copiando `.env.example`) con:
+   - `RESEND_API_KEY`
+   - `CONTACT_TO_EMAIL`
+   - `CONTACT_FROM_EMAIL`
+4. Configurar las mismas variables en el entorno de deploy (Vercel/servidor).
+5. Probar envio desde la pagina `/contacto`.
 
 Ejemplo local (zsh/bash):
 
 ```bash
 export RESEND_API_KEY="re_xxx"
 export CONTACT_TO_EMAIL="tu_correo@dominio.com"
-export CONTACT_FROM_EMAIL="Alquiladora Crystal <noreply@tudominio.com>"
+export CONTACT_FROM_EMAIL="Alquiladora Crystal <onboarding@resend.dev>"
 npm start
 ```
 

@@ -177,15 +177,6 @@ export const CATALOG_PRODUCTS: readonly CatalogProduct[] = [
     imageWidth: 1200,
     imageHeight: 750,
   },
-  {
-    id: 'inflable',
-    name: 'Inflable',
-    category: 'mobiliario',
-    imageSrc: '/Mobiliario/Inflable.webp',
-    imageAlt: 'Inflable para eventos familiares',
-    imageWidth: 1200,
-    imageHeight: 750,
-  },
 
 // ---------------------- LOZA ----------------------
 
@@ -526,5 +517,14 @@ export const CATALOG_PRODUCTS: readonly CatalogProduct[] = [
     imageWidth: 768,
     imageHeight: 510,
   },
-
+ // ---------------------- OTROS   ----------------------
+  {
+    id: 'inflable',
+    name: 'Inflable 3.5 x 3.5',
+    category: 'otros',
+    imageSrc: '/Mobiliario/Inflable.webp',
+    imageAlt: 'Inflable para eventos familiares',
+    imageWidth: 1200,
+    imageHeight: 750,
+  },
 ];

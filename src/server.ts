@@ -5,6 +5,7 @@ import {
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
 import express, { type Request } from 'express';
+import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
@@ -12,6 +13,46 @@ const browserDistFolder = join(import.meta.dirname, '../browser');
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 const requestTracker = new Map<string, number[]>();
+
+function loadDotEnv(filePath: string): void {
+  if (!existsSync(filePath)) {
+    return;
+  }
+
+  const fileContent = readFileSync(filePath, 'utf8');
+  const lines = fileContent.split(/\r?\n/);
+
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+
+    if (!line || line.startsWith('#')) {
+      continue;
+    }
+
+    const separatorIndex = line.indexOf('=');
+    if (separatorIndex <= 0) {
+      continue;
+    }
+
+    const key = line.slice(0, separatorIndex).trim();
+    if (!key || process.env[key]) {
+      continue;
+    }
+
+    let value = line.slice(separatorIndex + 1).trim();
+
+    if (
+      (value.startsWith('"') && value.endsWith('"')) ||
+      (value.startsWith("'") && value.endsWith("'"))
+    ) {
+      value = value.slice(1, -1);
+    }
+
+    process.env[key] = value;
+  }
+}
+
+loadDotEnv(join(process.cwd(), '.env'));
 
 interface ContactPayload {
   readonly name: string;
@@ -202,6 +243,16 @@ app.post('/api/contact', async (request, response) => {
     if (!resendResponse.ok) {
       const resendError = await resendResponse.text();
       console.error('Resend API error:', resendResponse.status, resendError);
+      const isAuthOrSenderIssue = resendResponse.status === 401 || resendResponse.status === 403;
+      const isValidationIssue = resendResponse.status === 422;
+
+      if (isAuthOrSenderIssue || isValidationIssue) {
+        return response.status(502).json({
+          message:
+            'No se pudo enviar la solicitud. Revisa RESEND_API_KEY y CONTACT_FROM_EMAIL (debe estar verificado en Resend).',
+        });
+      }
+
       return response.status(502).json({
         message: 'No se pudo enviar la solicitud en este momento. Intenta de nuevo.',
       });
