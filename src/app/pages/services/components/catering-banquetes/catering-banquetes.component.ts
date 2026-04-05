@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 
 type CateringIcon = 'banquete' | 'catering';
 
@@ -12,7 +11,7 @@ interface CateringFeature {
 @Component({
   selector: 'app-catering-banquetes',
   standalone: true,
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './catering-banquetes.component.html',
   styleUrl: './catering-banquetes.component.css',
 })
