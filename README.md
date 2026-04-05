@@ -1,169 +1,223 @@
-# WebCrystal Angular
+# Crystal Web
 
-Sitio web de **Alquiladora Crystal** construido con Angular (standalone components), orientado a una arquitectura modular y escalable.
+**Crystal Rental** (Alquiladora Crystal) is a modern, high-performance website for event
+furniture rental services. Built with Angular 21 and optimized for SEO, performance, and
+conversion. Specializing in chair, table, and accessory rentals for events in Puebla,
+Mexico.
 
-## Stack
+## About Crystal Rental
 
-- Angular 21
-- TypeScript
-- Angular SSR
-- CSS (component-scoped styles)
+Alquiladora Crystal provides premium event furniture rental services with a focus on
+quality, reliability, and exceptional customer service. This website is engineered to
+capture local clients, build trust, and facilitate seamless quotation requests.
 
-## Arquitectura
+## Technology Stack
 
-```text
-src/app
-  core/
-  layout/
-    navbar/
-    footer/
-  shared/
-    components/
-    interfaces/
-    models/
-  pages/
-    home/
+- **Framework**: Angular 21 with Server-Side Rendering (SSR)
+- **Language**: TypeScript
+- **Styling**: Component-scoped CSS (no external CSS frameworks)
+- **Build Tool**: Angular CLI
+- **Package Manager**: npm
+- **Architecture**: Standalone components, feature-based structure
+- **Performance**: Optimized for Core Web Vitals, lazy loading, image optimization
+- **SEO**: Dynamic meta tags, JSON-LD schema, sitemap, robots.txt, Open Graph cards
+
+## Project Structure
+
+```
+src/
+  app/
+    core/                  # Global services, guards, interceptors
+    layout/                # Header, footer, shared layout components
+      navbar/
+      footer/
+    shared/                # Reusable components, pipes, directives
       components/
-    services/
-      components/
-    about/
-      components/
-    contact/
-      components/
-    catalog/
+      interfaces/
+      models/
+    pages/                 # Feature pages with lazy loading
+      home/
+      services/
+      about/
+      contact/
+      catalog/
+  server.ts                # Express + Angular SSR configuration
+  index.html               # Root HTML with SEO meta tags
 ```
 
-## Caracteristicas implementadas
+## Key Features
 
-- Arquitectura profesional por capas: `core`, `layout`, `shared`, `pages`.
-- Componentes standalone para Angular moderno.
-- Home desacoplado por secciones (`hero`, `our-services`, `faq`, `testimonials`).
-- Estilos encapsulados por componente (sin mezclar estilos globales innecesarios).
-- SEO tecnico base:
-  - `title` y `meta description` por ruta.
-  - Open Graph y Twitter cards.
-  - Canonical dinamico.
-  - `robots.txt` y `sitemap.xml`.
-- Optimizaciones de rendimiento para mobile:
-  - Prioridad de carga para imagen hero.
-  - Dimensiones explicitas en imagenes para reducir CLS.
+✨ **Professional Architecture**
+- Layered structure: `core`, `layout`, `shared`, `pages`
+- Standalone components (modern Angular pattern)
+- Feature-based organization for scalability
 
-## Scripts
+🚀 **Performance Optimized**
+- Server-Side Rendering (SSR) for fast initial load
+- Lazy loading per page
+- Explicit image dimensions to minimize CLS
+- Optimized bundle size and code splitting
+
+🔍 **SEO First**
+- Dynamic `<title>` and `<meta description>` per route
+- Structured data (JSON-LD) for rich snippets
+- Open Graph and Twitter Card support
+- Dynamic canonical tags
+- Auto-generated `robots.txt` and `sitemap.xml`
+- Mobile-first responsive design
+
+🎨 **Design & UX**
+- Clean, professional interface aligned with brand colors
+- Component-scoped CSS (no style pollution)
+- Home page with modular sections (hero, services, FAQ, testimonials)
+- Fully responsive across all devices
+
+## Quick Start
+
+### Prerequisites
+- Node.js (v18+)
+- npm v10+
+
+### Development
 
 ```bash
+# Install dependencies
 npm install
+
+# Start development server with SSR
 npm start
-npm run start:prod
-npm run build
-npm run build:prod
-npm run test
-```
 
-## Desarrollo local
-
-1. Instala dependencias:
-
-```bash
-npm install
-```
-
-2. Ejecuta en desarrollo:
-
-```bash
-npm start
-```
-
-3. Abre en navegador:
-
-```text
+# Open in browser
 http://localhost:4200
 ```
 
-## Prueba de Lighthouse (importante)
-
-Para medir rendimiento real, evita Lighthouse sobre `npm start` (modo desarrollo).
-
-Usa:
+### Production Build & Testing
 
 ```bash
+# Build for production
+npm run build:prod
+
+# Start production server (for Lighthouse testing)
 npm run start:prod
+
+# Run unit tests
+npm run test
 ```
 
-y corre Lighthouse en `http://localhost:4200`.
+### Important: Performance Testing with Lighthouse
 
-En modo dev Angular desactiva optimizaciones y los scores de Performance salen artificialmente mas bajos.
+⚠️ **Do NOT use `npm start` for Lighthouse audits.** Development mode disables Angular
+optimizations, causing artificially low performance scores.
 
-## SEO y archivos publicos
+Instead:
+```bash
+npm run start:prod
+# Then run Lighthouse on http://localhost:4200
+```
 
-Archivos SEO relevantes:
+## SEO Configuration
 
-- `src/index.html`
-- `src/app/core/services/seo.service.ts`
-- `src/app/app.routes.ts`
-- `public/robots.txt`
-- `public/sitemap.xml`
+Key files for SEO management:
 
-## Catalogo de productos
+- **`src/index.html`** — Root template with base meta tags
+- **`src/app/core/services/seo.service.ts`** — Dynamic meta tag injection
+- **`src/app/app.routes.ts`** — Route configuration with meta data
+- **`public/robots.txt`** — Search engine crawler directives
+- **`public/sitemap.xml`** — URL index for search engines
 
-El catalogo esta desacoplado en componentes y datos tipados:
+Each page includes:
+- Unique `<title>` and description tags
+- Open Graph meta tags for social sharing
+- Twitter Card support
+- JSON-LD structured data (LocalBusiness, Product schema)
+- Semantic HTML5 (`<main>`, `<article>`, `<section>`)
 
-- `src/app/pages/catalog/components/*`
-- `src/app/pages/catalog/data/catalog-products.data.ts`
-- `src/app/pages/catalog/models/catalog-product.model.ts`
+## Product Catalog
 
-Para editar productos hoy, cambia el archivo de datos (`catalog-products.data.ts`) sin tocar el layout.
+The catalog is decoupled from layout and fully typed:
 
-Escalamiento recomendado:
+- **Components**: `src/app/pages/catalog/components/*`
+- **Data**: `src/app/pages/catalog/data/catalog-products.data.ts`
+- **Models**: `src/app/pages/catalog/models/catalog-product.model.ts`
 
-1. Fase 1 (actual): datos tipados en el repo (maximo control de SEO y rendimiento, cero latencia extra).
-2. Fase 2: JSON versionado en `public/data` o bucket S3 + CloudFront con cache largo.
-3. Fase 3: CMS/headless + API con SSR/SSG para mantener indexacion SEO.
+To edit or add products, update `catalog-products.data.ts`. The component layer handles
+display logic independently.
 
-Si se usa S3, publicar solo JSON e imagenes optimizadas, y consumirlo desde SSR para que el HTML ya salga renderizado para buscadores.
+### Scaling Strategy
 
-## Formulario de contacto funcional
+- **Phase 1 (current)**: Typed data in repo (maximum SEO control, zero latency)
+- **Phase 2**: JSON in `public/data` or S3 + CloudFront with long cache headers
+- **Phase 3**: Headless CMS + API with SSR/SSG for dynamic content while maintaining SEO
 
-El formulario de `/contacto` envia datos al endpoint backend `POST /api/contact` (SSR/Express) y este endpoint reenvia la solicitud por email usando Resend.
+## Contact Form
 
-Variables de entorno requeridas:
+The contact form at `/contact` submits to the SSR backend (`POST /api/contact`) which
+forwards requests via [Resend](https://resend.com) email service.
 
-- `RESEND_API_KEY`: API key de Resend.
-- `CONTACT_TO_EMAIL`: correo destino que recibira las solicitudes (ej. `hola@alquiladoracrystal.com`).
-- `CONTACT_FROM_EMAIL`: remitente validado en Resend (en local puedes usar `Alquiladora Crystal <onboarding@resend.dev>`).
+### Setup
 
-Pasos recomendados:
+1. Create a free account at [Resend](https://resend.com) and generate an API key
+2. Verify your sending domain/email in Resend
+3. Create `.env` file (copy from `.env.example`):
+   ```bash
+   RESEND_API_KEY="re_xxxxx"
+   CONTACT_TO_EMAIL="info@alquiladoracrystal.com"
+   CONTACT_FROM_EMAIL="Crystal Rental <noreply@alquiladoracrystal.com>"
+   ```
+4. For local testing, use the default Resend test sender:
+   ```bash
+   CONTACT_FROM_EMAIL="Onboarding <onboarding@resend.dev>"
+   ```
+5. Apply the same environment variables in your hosting platform (Vercel, etc.)
 
-1. Crear cuenta en [Resend](https://resend.com) y generar API key.
-2. Verificar dominio/remitente en Resend para produccion.
-3. Crear un archivo `.env` local (copiando `.env.example`) con:
-   - `RESEND_API_KEY`
-   - `CONTACT_TO_EMAIL`
-   - `CONTACT_FROM_EMAIL`
-4. Configurar las mismas variables en el entorno de deploy (Vercel/servidor).
-5. Probar envio desde la pagina `/contacto`.
-
-Ejemplo local (zsh/bash):
+### Local Testing
 
 ```bash
-export RESEND_API_KEY="re_xxx"
-export CONTACT_TO_EMAIL="tu_correo@dominio.com"
-export CONTACT_FROM_EMAIL="Alquiladora Crystal <onboarding@resend.dev>"
+export RESEND_API_KEY="re_xxxxx"
+export CONTACT_TO_EMAIL="your-email@example.com"
+export CONTACT_FROM_EMAIL="Onboarding <onboarding@resend.dev>"
 npm start
 ```
 
-## Deploy
+Then test the form at `http://localhost:4200/contact`.
 
-Dominio objetivo:
+## Deployment
 
+### Target Domain
 - `https://alquiladoracrystal.com`
 
-Al desplegar, valida:
+### Pre-Deploy Checklist
 
-- Respuesta `200` en rutas principales.
-- `robots.txt` y `sitemap.xml` accesibles.
-- Envio de sitemap en Google Search Console.
+- [ ] All main routes respond with HTTP 200
+- [ ] `robots.txt` and `sitemap.xml` are publicly accessible
+- [ ] Open Graph meta tags render correctly (test with [og-image.vercel.app](https://og-image.vercel.app))
+- [ ] Core Web Vitals pass (LCP < 2.5s, CLS < 0.1, INP < 200ms)
+- [ ] Submit sitemap to [Google Search Console](https://search.google.com/search-console)
+- [ ] No 404 errors in Google Search Console
+- [ ] Mobile-friendly test passes
 
-## Notas
+### Environment Variables (Required)
 
-- Proyecto preparado para crecer con nuevas features (por ejemplo, modulo de reservas).
-- Mantener la convencion por feature para nuevas paginas y componentes.
+- `RESEND_API_KEY` — API key for email service
+- `CONTACT_TO_EMAIL` — Recipient email for contact submissions
+- `CONTACT_FROM_EMAIL` — Sender email (must be verified in Resend)
+
+## Contributing
+
+This project follows Angular best practices:
+- Feature-based folder structure
+- Standalone components
+- Lazy-loaded pages
+- Component-scoped styles
+- TypeScript strict mode
+
+When adding new pages:
+1. Create a feature folder in `src/app/pages/`
+2. Define routes with SEO metadata
+3. Use the SEO service for dynamic meta tags
+4. Keep components small and focused
+5. Add proper `alt` text to all images
+
+## License
+
+Proprietary — Alquiladora Crystal
