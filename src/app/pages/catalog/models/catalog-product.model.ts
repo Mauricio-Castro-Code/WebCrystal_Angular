@@ -8,6 +8,14 @@ export interface CatalogCategory {
   readonly label: string;
 }
 
+export interface CatalogProductVariant {
+  readonly id: string;
+  readonly label: string;
+  readonly color: string;
+  readonly imageSrc: string;
+  readonly imageAlt: string;
+}
+
 export interface CatalogProduct {
   readonly id: string;
   readonly name: string;
@@ -16,6 +24,7 @@ export interface CatalogProduct {
   readonly imageAlt: string;
   readonly imageWidth: number;
   readonly imageHeight: number;
+  readonly variants?: readonly CatalogProductVariant[];
 }
 
 export interface CatalogProductCardItem extends CatalogProduct {

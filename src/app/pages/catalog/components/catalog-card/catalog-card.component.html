@@ -1,10 +1,10 @@
 <article class="catalog-card" itemscope itemtype="https://schema.org/Product">
   <div class="catalog-card__media">
     <img
-      [src]="product.imageSrc"
-      [alt]="product.imageAlt"
-      [attr.width]="product.imageWidth"
-      [attr.height]="product.imageHeight"
+      [src]="displayImage().src"
+      [alt]="displayImage().alt"
+      [attr.width]="product().imageWidth"
+      [attr.height]="product().imageHeight"
       itemprop="image"
       loading="lazy"
       decoding="async"
@@ -13,16 +13,37 @@
   </div>
 
   <div class="catalog-card__content">
-    <p class="catalog-card__category">{{ product.categoryLabel }}</p>
-    <h3 itemprop="name">{{ product.name }}</h3>
+    <p class="catalog-card__category">{{ product().categoryLabel }}</p>
+    <h3 itemprop="name">{{ product().name }}</h3>
+
+    @if (product().variants?.length) {
+      <div
+        class="catalog-card__variants"
+        role="group"
+        aria-label="Colores disponibles"
+      >
+        @for (variant of product().variants; track variant.id) {
+          <button
+            type="button"
+            class="catalog-card__variant"
+            [class.is-active]="variant.id === activeVariant()?.id"
+            [style.--variant-color]="variant.color"
+            [attr.aria-label]="'Ver color ' + variant.label"
+            [attr.aria-pressed]="variant.id === activeVariant()?.id"
+            [title]="variant.label"
+            (click)="selectVariant(variant.id)"
+          ></button>
+        }
+      </div>
+    }
 
     <div class="catalog-card__footer">
       <a
-        [href]="product.quoteUrl"
+        [href]="product().quoteUrl"
         class="catalog-card__cta"
         target="_blank"
         rel="noopener noreferrer"
-        [attr.aria-label]="'Cotizar ' + product.name"
+        [attr.aria-label]="'Cotizar ' + product().name"
       >
         Cotizar
       </a>

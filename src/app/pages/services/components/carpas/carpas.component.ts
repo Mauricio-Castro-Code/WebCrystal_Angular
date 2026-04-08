@@ -14,7 +14,7 @@ interface CarpaBenefit {
 })
 export class CarpasComponent {
   protected readonly benefits: readonly CarpaBenefit[] = [
-    { label: 'Capacidad adaptable para eventos pequenos y de gran formato.' },
+    { label: 'Capacidad adaptable para eventos pequeños y de gran formato.' },
     { label: 'Montaje profesional con enfoque en seguridad estructural.' },
     { label: 'Opciones de iluminacion y ambientacion para diferentes estilos.' },
   ];
