@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 interface TestimonialItem {
   readonly quote: string;
   readonly author: string;
+  readonly initials: string;
+  readonly eventType: string;
 }
 
 @Component({
@@ -16,18 +18,24 @@ export class TestimonialsComponent {
   protected readonly testimonials: readonly TestimonialItem[] = [
     {
       quote:
-        'Excelente servicio y puntualidad. El mobiliario llego impecable y transformo por completo nuestro evento.',
+        'Excelente servicio y puntualidad. El mobiliario llegó impecable y transformó por completo nuestro evento.',
       author: 'Daniela R.',
+      initials: 'DR',
+      eventType: 'Boda',
     },
     {
       quote:
-        'Nos ayudaron a seleccionar piezas elegantes para una cena corporativa. Gran acompanamiento en todo momento.',
+        'Nos ayudaron a seleccionar piezas elegantes para una cena corporativa. Gran acompañamiento en todo momento.',
       author: 'Ernesto G.',
+      initials: 'EG',
+      eventType: 'Evento corporativo',
     },
     {
       quote:
-        'El montaje fue rapido y profesional. Sin duda volveremos a contratar para futuros eventos.',
+        'El montaje fue rápido y profesional. Sin duda volveremos a contratar para futuros eventos.',
       author: 'Daniel C.',
+      initials: 'DC',
+      eventType: 'XV años',
     },
   ];
 }

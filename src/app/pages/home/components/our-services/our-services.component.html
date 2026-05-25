@@ -7,7 +7,10 @@
 
     <div class="our-services__grid">
       @for (service of services; track service.title) {
-        <article class="service-card">
+        <article class="service-card" [class.service-card--featured]="service.featured">
+          @if (service.badge) {
+            <span class="service-card__badge">{{ service.badge }}</span>
+          }
           <div class="service-card__icon" aria-hidden="true">
             @switch (service.icon) {
               @case ('catering') {

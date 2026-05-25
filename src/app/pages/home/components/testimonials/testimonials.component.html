@@ -8,9 +8,15 @@
     <div class="testimonials-grid">
       @for (item of testimonials; track item.author) {
         <article class="testimonial-card">
-          <p class="testimonial-stars" aria-label="Calificacion de 5 estrellas">★★★★★</p>
-          <p class="testimonial-quote">"{{ item.quote }}"</p>
-          <p class="testimonial-author">— {{ item.author }}</p>
+          <p class="testimonial-stars" aria-label="Calificación de 5 estrellas">★★★★★</p>
+          <blockquote class="testimonial-quote">"{{ item.quote }}"</blockquote>
+          <footer class="testimonial-footer">
+            <div class="testimonial-avatar" aria-hidden="true">{{ item.initials }}</div>
+            <div class="testimonial-meta">
+              <p class="testimonial-author">{{ item.author }}</p>
+              <span class="testimonial-event-type">{{ item.eventType }}</span>
+            </div>
+          </footer>
         </article>
       }
     </div>

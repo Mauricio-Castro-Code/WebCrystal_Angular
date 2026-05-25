@@ -10,6 +10,8 @@ interface ServiceCard {
   readonly linkText: string;
   readonly ariaLabel: string;
   readonly icon: ServiceIcon;
+  readonly featured?: boolean;
+  readonly badge?: string;
 }
 
 @Component({
@@ -22,30 +24,32 @@ interface ServiceCard {
 export class OurServicesComponent {
   protected readonly services: readonly ServiceCard[] = [
     {
-      title: 'Catering',
+      title: 'Catering y Banquetes',
       description:
-        'Experiencias gastronomicas de alta cocina disenadas para deleitar a todos tus invitados con menus personalizados.',
+        'Menús personalizados diseñados para bodas, XV años y eventos corporativos. Alta cocina con presentación impecable para cada ocasión.',
       link: '/servicios',
-      linkText: 'Ver mas',
-      ariaLabel: 'Ver mas sobre catering',
+      linkText: 'Ver servicio',
+      ariaLabel: 'Ver más sobre catering y banquetes',
       icon: 'catering',
     },
     {
-      title: 'Mobiliario',
+      title: 'Renta de Sillas, Mesas y Mobiliario',
       description:
-        'Sillas, mesas y elementos decorativos de tendencia. Variedad de estilos desde lo clasico hasta lo industrial.',
+        'Renta de sillas, mesas, vajilla, cristalería y mantelería premium para eventos en Puebla. Estilos clásicos, modernos e industriales con entrega y montaje incluido.',
       link: '/catalogo',
-      linkText: 'Ver mas',
-      ariaLabel: 'Ver mas sobre mobiliario',
+      linkText: 'Ver catálogo',
+      ariaLabel: 'Ver catálogo de renta de sillas y mesas para eventos',
       icon: 'mobiliario',
+      featured: true,
+      badge: 'Más solicitado',
     },
     {
-      title: 'Carpas',
+      title: 'Instalación de Carpas',
       description:
-        'Carpas elegantes y resistentes para eventos al aire libre. Proteccion y estilo sin importar el clima.',
+        'Carpas elegantes y resistentes para eventos al aire libre en Puebla. Protección y estilo sin importar el clima, con instalación profesional.',
       link: '/servicios',
-      linkText: 'Ver mas',
-      ariaLabel: 'Ver mas sobre carpas para eventos',
+      linkText: 'Ver servicio',
+      ariaLabel: 'Ver más sobre renta de carpas para eventos',
       icon: 'carpas',
     },
   ];
