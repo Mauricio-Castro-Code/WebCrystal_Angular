@@ -1,5 +1,5 @@
 <header class="navbar" [class.overlay]="overlay">
-  <a class="brand-link" routerLink="/inicio" aria-label="Ir a inicio" (click)="closeMenu()">
+  <a class="brand-link" routerLink="/" aria-label="Ir a inicio" (click)="closeMenu()">
     <img class="icon" src="/Icon_1X1Normal-128.webp" alt="Logo Crystal Alquiladora" width="128" height="183" decoding="async" />
   </a>
 
@@ -18,7 +18,7 @@
   </button>
 
   <nav id="main-nav" class="menu" [class.open]="menuOpen" aria-label="Navegacion principal">
-    <a routerLink="/inicio" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Inicio</a>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Inicio</a>
     <a routerLink="/catalogo" routerLinkActive="active" (click)="closeMenu()">Catalogo</a>
     <a routerLink="/servicios" routerLinkActive="active" (click)="closeMenu()">Servicios</a>
     <a routerLink="/nosotros" routerLinkActive="active" (click)="closeMenu()">Nosotros</a>

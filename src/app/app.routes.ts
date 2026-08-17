@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'inicio' },
   {
-    path: 'inicio',
+    path: '',
+    pathMatch: 'full',
     loadComponent: () =>
       import('./pages/home/home.component').then((m) => m.HomeComponent),
     title: 'Alquiladora Crystal | Renta de Sillas, Mesas y Mobiliario para Eventos en Puebla',
@@ -12,7 +12,8 @@ export const routes: Routes = [
         'Renta de sillas, mesas, carpas y mobiliario para eventos en Puebla. Bodas, XV años y eventos corporativos. Más de 30 años de experiencia. ¡Cotiza por WhatsApp!',
     },
   },
-  { path: 'home', redirectTo: 'inicio', pathMatch: 'full' },
+  { path: 'inicio', redirectTo: '', pathMatch: 'full' },
+  { path: 'home', redirectTo: '', pathMatch: 'full' },
   {
     path: 'catalogo',
     loadComponent: () =>
@@ -54,5 +55,5 @@ export const routes: Routes = [
     },
   },
   { path: 'about', redirectTo: 'nosotros', pathMatch: 'full' },
-  { path: '**', redirectTo: 'inicio' },
+  { path: '**', redirectTo: '' },
 ];

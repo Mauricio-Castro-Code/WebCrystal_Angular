@@ -23,13 +23,7 @@ export class App {
 
   protected get isInicioRoute(): boolean {
     return (
-      this.router.url === '/' ||
-      this.router.url === '/inicio' ||
-      this.router.url === '/home' ||
-      this.router.url.startsWith('/inicio?') ||
-      this.router.url.startsWith('/inicio#') ||
-      this.router.url.startsWith('/home?') ||
-      this.router.url.startsWith('/home#')
+      this.router.url === '/' || this.router.url.startsWith('/?') || this.router.url.startsWith('/#')
     );
   }
 }
