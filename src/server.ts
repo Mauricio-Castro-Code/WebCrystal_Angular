@@ -270,19 +270,6 @@ app.post('/api/contact', async (request, response) => {
 });
 
 /**
- * 301 redirects for legacy URLs still referenced by old links/crawlers,
- * so any residual link equity carries over instead of dead-ending in a 404.
- */
-const legacyRedirects: Record<string, string> = {
-  '/index.html': '/',
-  '/contacto.html': '/contacto',
-};
-
-app.get(Object.keys(legacyRedirects), (req, res) => {
-  res.redirect(301, legacyRedirects[req.path]);
-});
-
-/**
  * Serve static files from /browser
  */
 app.use(
