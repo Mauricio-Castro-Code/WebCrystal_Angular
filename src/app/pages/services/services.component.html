@@ -3,14 +3,15 @@
     <h1 id="services-title">Servicios de Renta para Eventos en Puebla</h1>
     <span class="services-hero__accent" aria-hidden="true"></span>
     <p>
-      Soluciones integrales para eventos sociales y corporativos con mobiliario premium, catering
-      profesional y logistica especializada.
+      Desde 1991, ofrecemos renta de mobiliario para eventos sociales, empresariales e
+      institucionales. Complementamos tu evento con carpas y catering, con atención directa
+      de nuestro equipo.
     </p>
   </div>
 </section>
 
-<app-catering-banquetes></app-catering-banquetes>
 <app-renta-mobiliario></app-renta-mobiliario>
+<app-catering-banquetes></app-catering-banquetes>
 @defer (on viewport) {
   <app-carpas></app-carpas>
 } @placeholder {
@@ -21,3 +22,5 @@
 } @placeholder {
   <section class="services-placeholder services-placeholder--cta" aria-hidden="true"></section>
 }
+
+<app-delivery-info></app-delivery-info>

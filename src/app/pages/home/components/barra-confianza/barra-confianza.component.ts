@@ -17,18 +17,18 @@ interface TrustItem {
 export class BarraConfianzaComponent {
   protected readonly trustItems: readonly TrustItem[] = [
     {
-      value: '+30 años',
-      label: 'Experiencia Comprobada',
+      value: 'Desde 1991',
+      label: 'Trayectoria en renta y servicios para eventos',
       icon: 'experiencia',
     },
     {
-      value: '100% Satisfacción',
-      label: 'Entrega Garantizada',
+      value: 'Atención directa',
+      label: 'Mobiliario, carpas y catering con nuestro equipo',
       icon: 'soporte',
     },
     {
-      value: 'Mobiliario Destacado ',
-      label: 'Limpio y en excelente estado',
+      value: 'Experiencia institucional',
+      label: 'Participación en eventos de gran escala',
       icon: 'calidad',
     },
   ];

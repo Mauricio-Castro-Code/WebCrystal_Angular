@@ -24,6 +24,17 @@ interface ServiceCard {
 export class OurServicesComponent {
   protected readonly services: readonly ServiceCard[] = [
     {
+      title: 'Renta de Sillas, Mesas y Mobiliario',
+      description:
+        'Renta de sillas, mesas, vajilla, cristalería y mantelería premium para eventos en Puebla. Solicita entrega y montaje al cotizar; sus costos dependen de la distancia, el equipo y el servicio.',
+      link: '/catalogo',
+      linkText: 'Ver catálogo',
+      ariaLabel: 'Ver catálogo de renta de sillas y mesas para eventos',
+      icon: 'mobiliario',
+      featured: true,
+      badge: 'Mobiliario para tu evento',
+    },
+    {
       title: 'Catering y Banquetes',
       description:
         'Menús personalizados diseñados para bodas, XV años y eventos corporativos. Alta cocina con presentación impecable para cada ocasión.',
@@ -31,17 +42,6 @@ export class OurServicesComponent {
       linkText: 'Ver servicio',
       ariaLabel: 'Ver más sobre catering y banquetes',
       icon: 'catering',
-    },
-    {
-      title: 'Renta de Sillas, Mesas y Mobiliario',
-      description:
-        'Renta de sillas, mesas, vajilla, cristalería y mantelería premium para eventos en Puebla. Estilos clásicos, modernos e industriales con entrega y montaje incluido.',
-      link: '/catalogo',
-      linkText: 'Ver catálogo',
-      ariaLabel: 'Ver catálogo de renta de sillas y mesas para eventos',
-      icon: 'mobiliario',
-      featured: true,
-      badge: 'Más solicitado',
     },
     {
       title: 'Instalación de Carpas',

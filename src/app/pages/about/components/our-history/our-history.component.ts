@@ -15,7 +15,7 @@ interface HistoryMilestone {
 export class OurHistoryComponent {
   protected readonly milestones: readonly HistoryMilestone[] = [
     {
-      period: '1990',
+      period: '1991',
       title: 'Fundacion',
       description:
         'Iniciamos operaciones en Puebla con un inventario inicial y una meta clara: elevar la calidad del mercado local de renta para eventos.',

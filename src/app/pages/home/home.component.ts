@@ -1,5 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 
+import { EventCaseComponent } from './components/event-case/event-case.component';
+import { DeliveryInfoComponent } from '../../shared/components/delivery-info/delivery-info.component';
 import { JsonLdService } from '../../core/services/json-ld.service';
 import { BarraConfianzaComponent } from './components/barra-confianza/barra-confianza.component';
 import { ConveniosComponent } from './components/convenios/convenios.component';
@@ -12,6 +14,8 @@ import { TestimonialsComponent } from './components/testimonials/testimonials.co
   selector: 'app-home',
   standalone: true,
   imports: [
+    EventCaseComponent,
+    DeliveryInfoComponent,
     HeroComponent,
     OurServicesComponent,
     BarraConfianzaComponent,
@@ -40,10 +44,10 @@ export class HomeComponent implements OnInit {
         },
         {
           '@type': 'Question',
-          name: '¿Cuál es el método de entrega del mobiliario rentado?',
+          name: '¿Cómo funcionan la recolección, la entrega y el montaje?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Ofrecemos dos opciones: recolección en el local sin costo adicional, o entrega a domicilio con costo de flete calculado según la distancia del envío redondo.',
+            text: 'Puedes recoger el equipo en nuestro local o solicitar entrega a domicilio. El flete se calcula en nuestro sistema según la distancia. Si necesitas montaje, indícalo al cotizar; su costo depende del equipo y del servicio contratado.',
           },
         },
         {

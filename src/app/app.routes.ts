@@ -9,7 +9,7 @@ export const routes: Routes = [
     title: 'Alquiladora Crystal | Renta de Sillas, Mesas y Mobiliario para Eventos en Puebla',
     data: {
       description:
-        'Renta de sillas, mesas, carpas y mobiliario para eventos en Puebla. Bodas, XV años y eventos corporativos. Más de 30 años de experiencia. ¡Cotiza por WhatsApp!',
+        'Renta de sillas, mesas, carpas y mobiliario para eventos en Puebla. Bodas, XV años y eventos corporativos. Desde 1991. ¡Cotiza por WhatsApp!',
     },
   },
   { path: 'inicio', redirectTo: '', pathMatch: 'full' },
@@ -31,7 +31,7 @@ export const routes: Routes = [
     title: 'Servicios de Renta para Eventos en Puebla | Catering, Carpas y Mobiliario – Alquiladora Crystal',
     data: {
       description:
-        'Servicios de renta de mobiliario, instalación de carpas, catering y banquetes para bodas y eventos en Puebla. Montaje profesional incluido. ¡Solicita tu cotización!',
+        'Renta de mobiliario, carpas y catering en Puebla. Atención directa desde 1991. Solicita entrega y montaje al cotizar tu evento.',
     },
   },
   {
@@ -48,10 +48,10 @@ export const routes: Routes = [
     path: 'nosotros',
     loadComponent: () =>
       import('./pages/about/about.component').then((m) => m.AboutComponent),
-    title: 'Quiénes Somos | Más de 30 Años Rentando Mobiliario en Puebla – Alquiladora Crystal',
+    title: 'Quiénes Somos | Renta de Mobiliario en Puebla Desde 1991 – Alquiladora Crystal',
     data: {
       description:
-        'Conoce la historia y los valores de Alquiladora Crystal: más de 30 años siendo los especialistas en renta de mobiliario y logística para bodas y eventos en Puebla.',
+        'Conoce la historia y los valores de Alquiladora Crystal: desde 1991 como especialistas en renta de mobiliario y logística para bodas y eventos en Puebla.',
     },
   },
   { path: 'about', redirectTo: 'nosotros', pathMatch: 'full' },

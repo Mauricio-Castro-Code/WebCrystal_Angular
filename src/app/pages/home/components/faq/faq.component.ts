@@ -19,14 +19,14 @@ export class FaqComponent {
         'No es necesario visitar nuestra tienda fisica. Si necesitas ayuda, fotos o tienes alguna duda, estamos aqui para asistirte.',
     },
     {
-      question: 'Cual es el metodo de entrega?',
+      question: '¿Cómo funcionan la recolección, la entrega y el montaje?',
       intro: 'Ofrecemos dos opciones convenientes para la entrega de tus pedidos:',
       bullets: [
         'Recolección en el local: Puedes recoger tu pedido directamente en nuestro local sin costo adicional.',
-        'Entrega a domicilio: El costo del flete se calcula en nuestro sistema segun la distancia del envio redondo.',
+        'Entrega a domicilio: El costo del flete se calcula en nuestro sistema según la distancia.',
       ],
       outro:
-        'Asi puedes conocer el costo exacto antes de confirmar tu pedido y elegir la opcion que mejor se adapte a tu evento.',
+        'Si necesitas montaje, indícalo al cotizar; su costo depende del equipo y del servicio contratado.',
     },
     {
       question: 'Que documentos necesito para realizar un pedido?',

@@ -49,7 +49,7 @@
 .hero-btn-secondary:hover { background: var(--color-green-soft); border-color: var(--color-green); color: var(--color-green) }
 .hero-btn-secondary:hover .hero-btn__arrow { transform: translateX(3px) }
 .hero-stats { display: flex; gap: 2rem; margin-top: 3rem }
-.hero-stat { display: flex; flex-direction: column; gap: 2px }
+.hero-stat { min-width: 0; display: flex; flex-direction: column; gap: 2px }
 .hero-stat strong { color: var(--color-blue); font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700 }
 .hero-stat span { color: var(--color-text-muted); font-size: 0.75rem; font-weight: 500 }
 .hero-col--media {
