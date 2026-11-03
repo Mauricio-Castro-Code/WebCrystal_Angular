@@ -41,7 +41,7 @@
   height: 4px;
   margin-top: 14px;
   border-radius: var(--radius-pill, 999px);
-  background: linear-gradient(90deg, var(--color-green, #277740), var(--color-green-light, #2e8a4a));
+  background: var(--color-green);
 }
 
 .our-history__header p {
@@ -70,7 +70,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 2px;
-  background: linear-gradient(180deg, var(--color-green-glow, rgba(39, 119, 64, 0.25)), var(--color-border, rgba(17, 41, 89, 0.08)));
+  background: var(--color-green);
 }
 
 .history-item {
@@ -85,13 +85,13 @@
   background: var(--color-surface, #ffffff);
   border: 1px solid var(--color-border, rgba(17, 41, 89, 0.08));
   padding: 22px;
-  box-shadow: var(--shadow-sm, 0 1px 3px rgba(17, 41, 89, 0.06));
+  box-shadow: none;
   transition: box-shadow var(--transition-base, 0.28s ease), transform var(--transition-base, 0.28s ease);
 }
 
 .history-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md, 0 4px 16px rgba(17, 41, 89, 0.08));
+  transform: none;
+  box-shadow: none;
 }
 
 .history-item--reverse .history-card {

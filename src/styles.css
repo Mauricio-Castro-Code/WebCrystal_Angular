@@ -11,14 +11,14 @@
 
   --color-white: #f2f2f2;
   --color-surface: #ffffff;
-  --color-bg: #f8fafb;
+  --color-bg: #ffffff;
   --color-bg-alt: #f1f4f8;
 
   --color-text: #0f172a;
   --color-text-secondary: #475569;
   --color-text-muted: #64748b;
 
-  --color-border: rgba(17, 41, 89, 0.08);
+  --color-border: rgba(29, 47, 88, 0.16);
   --color-border-hover: rgba(17, 41, 89, 0.16);
 
   --shadow-sm: 0 1px 3px rgba(17, 41, 89, 0.06), 0 1px 2px rgba(17, 41, 89, 0.04);
@@ -26,13 +26,13 @@
   --shadow-lg: 0 12px 40px rgba(17, 41, 89, 0.10), 0 4px 12px rgba(17, 41, 89, 0.06);
   --shadow-xl: 0 20px 50px rgba(17, 41, 89, 0.14), 0 8px 20px rgba(17, 41, 89, 0.08);
 
-  --radius-sm: 10px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-xl: 32px;
-  --radius-pill: 999px;
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+  --radius-pill: 4px;
 
-  --font-heading: 'Playfair Display', 'Georgia', serif;
+  --font-heading: 'Lato', 'Segoe UI', sans-serif;
   --font-body: 'Lato', 'Segoe UI', sans-serif;
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -92,4 +92,13 @@ body {
 ::selection {
   background: var(--color-green-soft);
   color: var(--color-blue-deep);
+}
+
+/* Keyboard navigation remains visible across all existing components. */
+a:focus-visible, button:focus-visible { outline: 3px solid var(--color-blue); outline-offset: 4px; }
+
+@media (max-width: 860px) {
+  html { scroll-padding-top: 90px; scroll-padding-bottom: 80px; }
+  body { padding-bottom: env(safe-area-inset-bottom); }
+  input, select, textarea { font-size: 16px; }
 }

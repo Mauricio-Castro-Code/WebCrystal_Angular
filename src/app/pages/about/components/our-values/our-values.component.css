@@ -41,7 +41,7 @@
   height: 4px;
   margin-top: 14px;
   border-radius: var(--radius-pill, 999px);
-  background: linear-gradient(90deg, var(--color-green, #277740), var(--color-green-light, #2e8a4a));
+  background: var(--color-green);
 }
 
 .our-values__grid {
@@ -64,7 +64,7 @@
 
 .value-card:hover {
   transform: translateY(-3px);
-  box-shadow: var(--shadow-md, 0 4px 16px rgba(17, 41, 89, 0.08));
+  box-shadow: none;
   border-color: var(--color-green-glow, rgba(39, 119, 64, 0.25));
 }
 
@@ -75,7 +75,7 @@
   width: 54px;
   height: 54px;
   border-radius: var(--radius-md, 16px);
-  background: linear-gradient(135deg, var(--color-green-soft, rgba(39, 119, 64, 0.10)), rgba(39, 119, 64, 0.05));
+  background: var(--color-green-soft);
   color: var(--color-green, #277740);
 }
 

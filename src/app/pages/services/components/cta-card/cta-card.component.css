@@ -24,12 +24,10 @@
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-xl, 32px);
-  background:
-    radial-gradient(80% 160% at 100% 0%, rgba(39, 119, 64, 0.12) 0%, transparent 60%),
-    linear-gradient(135deg, var(--color-blue-deep, #112959), var(--color-blue-medium, #173a72));
+  background: var(--color-blue);
   padding: clamp(32px, 5vw, 72px) clamp(24px, 7vw, 84px);
   text-align: center;
-  box-shadow: var(--shadow-xl, 0 20px 50px rgba(17, 41, 89, 0.14));
+  box-shadow: none;
 }
 
 .services-cta-card__panel h2 {
@@ -61,7 +59,7 @@
   min-height: 58px;
   margin-top: 2rem;
   border-radius: var(--radius-pill, 999px);
-  background: linear-gradient(135deg, var(--color-green, #277740), var(--color-green-light, #2e8a4a));
+  background: var(--color-green);
   padding: 0 2.25rem;
   color: #ffffff;
   font-family: var(--font-heading, 'Playfair Display', serif);
@@ -69,15 +67,15 @@
   line-height: 1;
   font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 6px 24px rgba(39, 119, 64, 0.3);
+  box-shadow: none;
   transition:
     transform var(--transition-fast, 0.18s ease),
     box-shadow var(--transition-base, 0.28s ease);
 }
 
 .services-cta-card__button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 32px rgba(39, 119, 64, 0.4);
+  transform: none;
+  box-shadow: none;
 }
 
 .services-cta-card__button:focus-visible {

@@ -9,18 +9,14 @@
   margin-left: -50vw;
   margin-right: -50vw;
   padding: clamp(74px, 9vw, 108px) 0 clamp(56px, 7vw, 84px);
-  background:
-    radial-gradient(80% 140% at 100% 0%, rgba(39, 119, 64, 0.15) 0%, transparent 60%),
-    linear-gradient(135deg, var(--color-blue-deep, #112959), var(--color-blue-medium, #173a72));
-  content-visibility: auto;
-  contain-intrinsic-size: 410px;
+  background: var(--color-blue);
 }
 
 .catalog-hero__shell {
   width: min(1200px, 100%);
   margin: 0 auto;
   padding-inline: 16px;
-  text-align: center;
+  text-align: left;
 }
 
 .catalog-hero h1 {
@@ -31,7 +27,7 @@
   line-height: 1.06;
   font-weight: 700;
   letter-spacing: -0.02em;
-  text-transform: uppercase;
+  text-transform: none;
   text-wrap: balance;
 }
 
@@ -41,13 +37,13 @@
   height: 4px;
   margin-top: 16px;
   border-radius: var(--radius-pill, 999px);
-  background: linear-gradient(90deg, var(--color-green, #277740), var(--color-green-light, #2e8a4a));
+  background: var(--color-green);
 }
 
 .catalog-hero p {
   width: min(700px, 100%);
-  margin: 16px auto 0;
-  color: rgba(255, 255, 255, 0.72);
+  margin: 16px 0 0;
+  color: #e1e6ef;
   font-family: var(--font-body, 'Lato', sans-serif);
   font-size: clamp(0.95rem, 1.4vw, 1.15rem);
   line-height: 1.6;

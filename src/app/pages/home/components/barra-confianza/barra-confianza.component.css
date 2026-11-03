@@ -8,10 +8,10 @@
   width: 100vw;
   margin-left: -50vw;
   margin-right: -50vw;
-  background: linear-gradient(135deg, var(--color-blue-deep, #112959), var(--color-blue-medium, #173a72));
-  padding: clamp(48px, 6vw, 80px) 0;
+  background: var(--color-blue);
+  padding: 30px 0;
   content-visibility: auto;
-  contain-intrinsic-size: 320px;
+  contain-intrinsic-size: 160px;
 }
 
 .trust-bar__container {
@@ -45,7 +45,7 @@
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.10);
   color: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(8px);
+
 }
 
 .trust-item__icon-wrap svg {
@@ -57,14 +57,14 @@
   margin: 18px 0 0;
   color: #ffffff;
   font-family: var(--font-heading, 'Playfair Display', serif);
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
   line-height: 1.1;
   font-weight: 700;
 }
 
 .trust-item__label {
   margin: 8px 0 0;
-  color: rgba(255, 255, 255, 0.6);
+  color: #e1e6ef;
   font-family: var(--font-heading, 'Playfair Display', serif);
   font-size: 0.8rem;
   line-height: 1.35;
@@ -84,3 +84,6 @@
     gap: 28px;
   }
 }
+
+.trust-item__icon-wrap { display: none; }
+.trust-item__label { font-family: var(--font-body); letter-spacing: .03em; text-transform: none; font-size: .85rem; }

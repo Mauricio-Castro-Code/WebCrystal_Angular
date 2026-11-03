@@ -18,7 +18,7 @@
 .page-shell.home-shell {
   width: 100%;
   margin: 0 auto;
-  padding-top: var(--nav-offset);
+  padding-top: 0;
 }
 
 .app-footer-placeholder {

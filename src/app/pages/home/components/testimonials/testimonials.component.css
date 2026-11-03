@@ -41,7 +41,7 @@
   height: 4px;
   margin-top: 14px;
   border-radius: var(--radius-pill, 999px);
-  background: linear-gradient(90deg, var(--color-green, #277740), var(--color-green-light, #2e8a4a));
+  background: var(--color-green);
 }
 
 .testimonials-grid {
@@ -61,8 +61,8 @@
 }
 
 .testimonial-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg, 0 12px 40px rgba(17, 41, 89, 0.10));
+  transform: none;
+  box-shadow: none;
 }
 
 .testimonial-stars {
@@ -100,7 +100,7 @@
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-blue, #1d2f58), var(--color-blue-medium, #173a72));
+  background: var(--color-blue);
   color: #fff;
   font-family: var(--font-heading, 'Playfair Display', serif);
   font-size: 0.8rem;

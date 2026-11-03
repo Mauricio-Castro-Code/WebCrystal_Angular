@@ -6,7 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 8px;
 }
 
@@ -35,16 +35,16 @@
   transform: translateY(-1px);
   border-color: var(--color-green-glow, rgba(39, 119, 64, 0.25));
   color: var(--color-green, #277740);
-  box-shadow: var(--shadow-sm, 0 1px 3px rgba(17, 41, 89, 0.06));
+  box-shadow: none;
 }
 
 .catalog-filters__chip--active,
 .catalog-filters__chip--active:hover {
-  background: linear-gradient(135deg, var(--color-green, #277740), var(--color-green-light, #2e8a4a));
+  background: var(--color-green);
   border-color: transparent;
   color: #ffffff;
   transform: none;
-  box-shadow: 0 4px 14px rgba(39, 119, 64, 0.3);
+  box-shadow: none;
 }
 
 .catalog-filters__chip:focus-visible {
@@ -59,7 +59,7 @@
   }
 
   .catalog-filters__chip {
-    min-height: 40px;
+    min-height: 44px;
     padding: 0 16px;
     font-size: 0.78rem;
   }
