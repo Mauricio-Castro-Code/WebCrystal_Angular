@@ -37,16 +37,16 @@
       </div>
     }
 
+    @if (activeVariant(); as variant) { <p class="variant-label">{{ variant.label }}</p> }
     <div class="catalog-card__footer">
-      <a
-        [href]="product().quoteUrl"
-        class="catalog-card__cta"
-        target="_blank"
-        rel="noopener noreferrer"
-        [attr.aria-label]="'Cotizar ' + product().name"
-      >
-        Cotizar
-      </a>
+      <label class="quantity-label">Cantidad
+        <input type="number" min="1" max="99999" step="1" [value]="quantity"
+          [attr.aria-label]="'Cantidad de ' + product().name" #quantityInput
+          (input)="setQuantity(quantityInput.value)" />
+      </label>
+      <button type="button" class="catalog-card__cta" [disabled]="!validQuantity(quantity)" (click)="add()">
+        Agregar a mi solicitud
+      </button>
     </div>
   </div>
 </article>

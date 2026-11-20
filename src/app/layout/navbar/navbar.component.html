@@ -23,5 +23,24 @@
     <a routerLink="/servicios" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="closeMenu()">Servicios</a>
     <a routerLink="/nosotros" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="closeMenu()">Nosotros</a>
     <a routerLink="/contacto" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="closeMenu()">Contacto</a>
+    <a class="request-link" routerLink="/solicitud" (click)="closeMenu()" [attr.aria-label]="'Mi solicitud, ' + quote.count() + ' conceptos'">
+      <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 5h12v12H2zM14 9h4l4 4v4h-8"/><circle cx="6" cy="18" r="2" fill="currentColor"/><circle cx="18" cy="18" r="2" fill="currentColor"/></svg>
+      Mi solicitud <span class="request-count">{{ quote.count() }}</span>
+    </a>
   </nav>
 </header>
+
+@if (quote.count()) {
+  <a routerLink="/solicitud" class="mobile-request" [attr.aria-label]="'Ver mi solicitud, ' + quote.count() + ' conceptos'">
+    <span class="mobile-request__icon" aria-hidden="true">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 5h12v12H2zM14 9h4l4 4v4h-8"/><circle cx="6" cy="18" r="2" fill="currentColor"/><circle cx="18" cy="18" r="2" fill="currentColor"/></svg>
+      <span class="mobile-request__count">{{ quote.count() }}</span>
+    </span>
+    <span class="mobile-request__text">
+      <strong>Ver mi solicitud</strong>
+      <span>Revisar equipo</span>
+    </span>
+    <svg class="mobile-request__arrow" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 5 7 7-7 7"/></svg>
+  </a>
+}
+<p class="selection-announcement" role="status">{{ quote.announcement() }}</p>

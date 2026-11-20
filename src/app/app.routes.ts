@@ -54,6 +54,12 @@ export const routes: Routes = [
         'Conoce la historia y los valores de Alquiladora Crystal: desde 1991 como especialistas en renta de mobiliario y logística para bodas y eventos en Puebla.',
     },
   },
+  {
+    path: 'solicitud',
+    loadComponent: () => import('./pages/request/request.component').then(m => m.RequestComponent),
+    title: 'Mi solicitud de cotización | Alquiladora Crystal',
+    data: { description: 'Revisa tu equipo y solicita una cotización personalizada para tu evento.' },
+  },
   { path: 'about', redirectTo: 'nosotros', pathMatch: 'full' },
   { path: '**', redirectTo: '' },
 ];

@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { QuoteService } from '../../core/quote/quote.service';
+import { afterNextRender, Component, effect, inject, Input } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -9,6 +10,17 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
+  protected readonly quote = inject(QuoteService);
+  constructor() {
+    effect(onCleanup => {
+      if (!this.quote.announcement()) return;
+      const timeout = setTimeout(() => this.quote.announcement.set(''), 3500);
+      onCleanup(() => clearTimeout(timeout));
+    });
+    afterNextRender(() => {
+      try { this.quote.restore(localStorage); } catch { /* Browser storage is optional. */ }
+    });
+  }
   @Input() overlay = false;
   protected menuOpen = false;
 

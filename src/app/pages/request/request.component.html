@@ -1,0 +1,50 @@
+<section class="request-shell">
+  <p class="eyebrow">TU EVENTO CON CRYSTAL</p>
+  <h1>Mi solicitud</h1>
+  <p class="intro">Elige tu equipo. Nosotros te ayudamos con la cotización.</p>
+  @if (!quote.count()) {
+    <div class="empty"><h2>Tu solicitud está vacía</h2><p>Agrega el equipo que necesitas desde nuestro catálogo.</p><a class="primary" routerLink="/catalogo">Explorar catálogo</a></div>
+  } @else {
+    <nav class="steps" aria-label="Pasos de la solicitud"><button type="button" [attr.aria-current]="step() === 1 ? 'step' : null" (click)="goToStep(1)">1. Tu equipo</button><button type="button" [attr.aria-current]="step() === 2 ? 'step' : null" (click)="goToStep(2)">2. Tu evento</button></nav>
+    <div [hidden]="step() !== 1">
+      <header class="section-heading"><h2>Revisa tu equipo</h2><a routerLink="/catalogo">Seguir agregando</a></header>
+      @for (item of quote.items(); track item.key) {
+        <article class="equipment-row">
+          <img [src]="image(item)" [alt]="itemName(item)" width="88" height="76" />
+          <div class="equipment-name"><h3>{{ itemName(item) }}</h3><button class="text-button" type="button" (click)="quote.remove(item.key)" [attr.aria-label]="'Quitar ' + itemName(item)">Quitar</button></div>
+          <label>Cantidad<input type="number" min="1" max="99999" step="1" [value]="item.quantity" #quantity (change)="update(item.key, quantity)" [attr.aria-label]="'Cantidad de ' + itemName(item)" /></label>
+        </article>
+      }
+      @if (quote.recommendations().length) {
+        <aside class="recommendations"><p class="eyebrow">COMPLEMENTA TU MONTAJE</p><h3>¿Necesitas manteles para tus mesas?</h3><p>Estas opciones corresponden al tipo de mesa que elegiste. Puedes continuar sin agregarlas.</p>
+          @for (product of quote.recommendations(); track product.id) {
+            <div class="recommendation"><img [src]="product.imageSrc" [alt]="product.imageAlt" width="88" height="76" loading="lazy" /><span>{{ product.name }}</span><label>Cantidad<input type="number" value="1" min="1" max="99999" step="1" #linenQuantity [attr.aria-label]="'Cantidad de ' + product.name" /></label><button type="button" (click)="quote.add(product, +linenQuantity.value)">Agregar mantel</button></div>
+          }
+        </aside>
+      }
+      <div class="actions"><p>Precio y disponibilidad se confirman con oficina.</p><button class="primary" type="button" (click)="goToStep(2)">Continuar con mi evento →</button></div>
+    </div>
+    <div [hidden]="step() !== 2">
+      <h2>Cuéntanos de tu evento</h2>
+      <form [formGroup]="form" (ngSubmit)="send()">
+        <div class="fields">
+          <label class="full">¿A nombre de quién cotizamos?<input formControlName="name" autocomplete="name" maxlength="160" required /></label>
+          <label>Fecha del evento<input type="date" formControlName="eventDate" required /></label>
+          <label>¿Cómo recibirás el equipo?<select formControlName="delivery"><option value="delivery">Entrega a domicilio</option><option value="pickup">Retiro en local</option></select></label>
+          <label>{{ pickup ? 'Fecha de retiro en local' : 'Fecha de entrega' }}<input type="date" formControlName="fromDate" [max]="form.controls.eventDate.value" required /></label>
+          <label>{{ pickup ? 'Fecha de devolución' : 'Fecha de recolección' }}<input type="date" formControlName="toDate" [min]="form.controls.eventDate.value" required /></label>
+          <h3 class="full">Domicilio del evento</h3>
+          <label>Calle<input formControlName="street" maxlength="250" required /></label><label>Número exterior / interior<input formControlName="number" maxlength="40" placeholder="Si no tiene, escribe S/N" required /></label>
+          <label>Colonia<input formControlName="district" maxlength="160" required /></label><label>Municipio<input formControlName="city" maxlength="160" required /></label>
+          <label class="checkbox full"><input type="checkbox" formControlName="mounting" /> Necesito servicio de montaje</label>
+          <label class="full">Comentarios (opcional)<textarea formControlName="comments" rows="3" maxlength="1500" placeholder="Detalles del equipo o servicios que necesitas"></textarea></label>
+        </div>
+        <details class="review" open><summary>Tu equipo · {{ quote.count() }} conceptos</summary><ul>@for (item of quote.items(); track item.key) { <li>{{ item.quantity }} × {{ itemName(item) }}</li> }</ul><button type="button" class="text-button" (click)="goToStep(1)">Editar equipo</button></details>
+        @if (submitted() && (form.invalid || !datesValid)) { <p class="error" role="alert">Completa los campos obligatorios. La entrega o retiro debe ser antes o el día del evento, y la devolución o recolección después o ese mismo día.</p> }
+        <div class="actions"><button type="button" (click)="goToStep(1)">← Volver al equipo</button><button class="primary" type="submit">Solicitar cotización por WhatsApp</button></div>
+        <p class="notice">Se abrirá WhatsApp con tu mensaje preparado; pulsa enviar para hacérnoslo llegar. Esta solicitud no reserva equipo ni confirma precios. Si decides contratar, oficina te indicará los documentos necesarios.</p>
+      </form>
+    </div>
+  }
+  <p class="advisor">¿Necesitas orientación? <a href="https://wa.me/5212226503588" target="_blank" rel="noopener noreferrer">Habla con un asesor</a></p>
+</section>

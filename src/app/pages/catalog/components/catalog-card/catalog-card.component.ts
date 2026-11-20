@@ -1,4 +1,5 @@
-import { Component, computed, input, signal } from '@angular/core';
+import { QuoteService, validQuantity } from '../../../../core/quote/quote.service';
+import { Component, computed, inject, input, signal } from '@angular/core';
 
 import {
   type CatalogProductCardItem,
@@ -13,6 +14,15 @@ import {
 })
 export class CatalogCardComponent {
   readonly product = input.required<CatalogProductCardItem>();
+
+  protected readonly quote = inject(QuoteService);
+  protected quantity = 1;
+  protected readonly validQuantity = validQuantity;
+
+  protected setQuantity(value: string): void { this.quantity = Number(value); }
+  protected add(): void {
+    this.quote.add(this.product(), this.quantity, this.activeVariant()?.id);
+  }
 
   private readonly selectedVariantId = signal<string | null>(null);
 
